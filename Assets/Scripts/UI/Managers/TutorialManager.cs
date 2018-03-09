@@ -9,8 +9,8 @@ namespace UI.Managers
     {
         public static TutorialManager instance;
 
-        [SerializeField] private Button _backButton;
         [SerializeField] private Button _playButton;
+        [SerializeField] private Button _backButton;
 
         protected override void OnEnable()
         {
@@ -28,11 +28,6 @@ namespace UI.Managers
             screenState = MenuState.Tutorial;
         }
 
-        protected override void Start()
-        {
-            base.Start();
-        }
-
         protected override void PrepareScreen(MenuState state)
         {
             base.PrepareScreen(state);
@@ -40,20 +35,20 @@ namespace UI.Managers
 
         protected override void StartScreen()
         {
-            _backButton.onClick.AddListener(() => OnBackButtonClicked());
             _playButton.onClick.AddListener(() => OnPlayButtonClicked());
+            _backButton.onClick.AddListener(() => OnBackButtonClicked());
         }
 
         #region UI Event
 
-        private void OnBackButtonClicked()
-        {
-            _uiController.GoToMainMenuScreen();
-        }
-
         private void OnPlayButtonClicked()
         {
-            _uiController.GoToLevelSelectScreen();
+            UIController.instance.GoToLevelSelectScreen();
+        }
+
+        private void OnBackButtonClicked()
+        {
+            UIController.instance.GoToMainMenuScreen();
         }
 
         #endregion

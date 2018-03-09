@@ -13,11 +13,13 @@ namespace UI.Managers
         [SerializeField] private Button _tutorialButton;
         [SerializeField] private Button _creditsButton;
 
-        private UIController _uiController;
-
         protected override void OnEnable()
         {
             base.OnEnable();
+
+            _playButton.onClick.AddListener(() => OnPlayButtonClicked());
+            _tutorialButton.onClick.AddListener(() => OnTutorialButtonClicked());
+            _creditsButton.onClick.AddListener(() => OnCreditsButtonClicked());
         }
 
         protected override void Awake()
@@ -27,12 +29,8 @@ namespace UI.Managers
                 Destroy(this.gameObject);
             }
             instance = this;
-            screenState = MenuState.MainMenu;
-        }
 
-        protected override void Start()
-        {
-            base.Start();
+            screenState = MenuState.MainMenu;
         }
 
         protected override void PrepareScreen(MenuState state)
@@ -51,17 +49,17 @@ namespace UI.Managers
 
         private void OnPlayButtonClicked()
         {
-            _uiController.GoToLevelSelectScreen();
+            UIController.instance.GoToLevelSelectScreen();
         }
 
         private void OnTutorialButtonClicked()
         {
-            _uiController.GoToTutorialScreen();
+            UIController.instance.GoToTutorialScreen();
         }
 
         private void OnCreditsButtonClicked()
         {
-            _uiController.GoToCreditsScreen();
+            UIController.instance.GoToCreditsScreen();
         }
 
         #endregion

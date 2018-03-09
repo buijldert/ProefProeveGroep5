@@ -6,16 +6,10 @@ namespace UI.Base
     public abstract class ScreenManager : MonoBehaviour
     {
         protected MenuState screenState;
-        protected UIController _uiController;
 
         protected virtual void OnEnable()
         {
             UIController.OnScreenChanged += PrepareScreen;
-        }
-
-        protected virtual void Start()
-        {
-            _uiController = UIController.instance;
         }
 
         /// <summary>

@@ -5,9 +5,9 @@ using UI.Controllers;
 
 namespace UI.Managers
 {
-    public class LevelSelectManager : ScreenManager
+    public class CreditsManager : ScreenManager
     {
-        public static LevelSelectManager instance;
+        public static CreditsManager instance;
 
         [SerializeField] private Button _backButton;
 
@@ -24,10 +24,10 @@ namespace UI.Managers
             }
             instance = this;
 
-            screenState = MenuState.LevelSelect;
+            screenState = MenuState.Credits;
         }
 
-    
+
         protected override void PrepareScreen(MenuState state)
         {
             base.PrepareScreen(state);
