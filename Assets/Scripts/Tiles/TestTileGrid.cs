@@ -20,22 +20,7 @@ namespace Tiles {
 
         private void Start()
         {
-            _x = (Screen.width / _tilePositions.GetLength(0)) / 2;
-            _y = (Screen.height / 16) / 2;
-
-            _offsetY = _y * 4;
-            Vector2 newPos;
-            for (int i = 0; i < _tilePositions.GetLength(1); i++)
-            {
-                for (int j = 0; j < _tilePositions.GetLength(0); j++)
-                {
-                    newPos = _mainCamera.ScreenToWorldPoint(new Vector2(_x, _y + _offsetY));
-                    _tilePositions[j, i] = newPos;
-                    _x += Screen.width / _tilePositions.GetLength(0);
-                }
-                _x = (Screen.width / _tilePositions.GetLength(0)) / 2;
-                _y += Screen.height / 16;
-            }
+            StartCoroutine(SpawnGridDelay());
         }
 
         public Vector2 FindNearestPosition(Vector2 dropPos)
@@ -55,6 +40,30 @@ namespace Tiles {
             }
 
             return nearestPos;
+        }
+
+        private IEnumerator SpawnGridDelay()
+        {
+            _x = (Screen.width / _tilePositions.GetLength(0)) / 2;
+            _y = (Screen.height / 16) / 2;
+
+            float xCalc = _x;
+            float yCalc = _y;
+
+            _offsetY = _y * 4;
+            Vector2 newPos;
+            for (int i = 0; i < _tilePositions.GetLength(1); i++)
+            {
+                for (int j = 0; j < _tilePositions.GetLength(0); j++)
+                {
+                    newPos = _mainCamera.ScreenToWorldPoint(new Vector2(_x, _y + _offsetY));
+                    _tilePositions[j, i] = newPos;
+                    _x += xCalc
+                    yield return new WaitForEndOfFrame();
+                }
+                _x = xCalc;
+                _y += yCalc;
+            }
         }
 
         private void OnDisable()
