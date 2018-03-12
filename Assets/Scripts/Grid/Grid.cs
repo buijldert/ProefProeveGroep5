@@ -22,7 +22,7 @@ public class Grid : MonoBehaviour {
 	private void CreateGrid() {
 		for (int x = 0; x < _gridWidth; x++) {
 			for (int y = 0; y < _gridHeight; y++) {
-				Vector2 gridPos = new Vector2 (x, y);
+				Vector2 gridPos = new Vector2 (x, y + 1.75f);
 				Vector2 worldPos = GridToWorldPos (new Vector2(gridPos.x * _nodeDiameter, gridPos.y * _nodeDiameter));
 
 				Node node = new Node (gridPos, worldPos);
@@ -61,7 +61,7 @@ public class Grid : MonoBehaviour {
 		} else if (n < 0) {
 			return Mathf.Floor (n / _nodeDiameter) * _nodeDiameter;
 		} else {
-			return _nodeDiameter
+            return _nodeDiameter;
 		}
 	}
 
@@ -82,9 +82,9 @@ public class Grid : MonoBehaviour {
 		if (nearestPos.x >= minimumPosition.x && nearestPos.x <= maximumPosition.x) {
 			if (nearestPos.y >= minimumPosition.y && nearestPos.y <= maximumPosition.y) {
 				return nearestPos;
-			}
+			}   
 		}
-		return null;
+		return Vector2.zero;
 	}
 
 	public List<Node> GetNeighbours(Node node) {
