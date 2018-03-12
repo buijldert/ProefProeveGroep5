@@ -16,9 +16,16 @@ MonoBehaviour:
   - Assets/Art
   - Assets/Art/2D
   - Assets/Art/2D/Sprites
+  - Assets/Art/2D/Animations
   - Assets/Art/3D
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Assets/Art/3D/Models
+  - Assets/Art/3D/Textures
+  - Assets/Art/3D/Materials
+  - Assets/Art/3D/Animations
+  - Assets/Scenes
+  - Assets/Sounds/
+  - Assets/Sounds/Music
+  - Assets/Sounds/SFX
+  - Assets/Prefabs
+  - Assets/Shaders
+  - Assets/Resources
