@@ -20,7 +20,6 @@ namespace Tiles {
                 if (OnChangeTile != null)
                     OnChangeTile(newTile);
             }
-
         }
 
         public void ClickedButtonCheck()

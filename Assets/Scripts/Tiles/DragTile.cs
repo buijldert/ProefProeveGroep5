@@ -1,41 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Tiles {
 
-    public class DragTile : MonoBehaviour{
+    public class DragTile : MonoBehaviour {
 
         public delegate Vector2 GetGridPosAction(Vector2 dropPos);
         public static GetGridPosAction OnGetGridPos;
 
         private GameObject _tileToDrag = null;
 
-        private void OnEnable(){
+        private void OnEnable() {
 
             TilePlacer.OnChangeTile += ChangeDragTile;
         }
 
-        private void ChangeDragTile(GameObject dragTile){
+        private void ChangeDragTile(GameObject dragTile) {
 
             _tileToDrag = dragTile;
         }
 
         private void Update() {
 
-            if (Input.touchCount > 0 && _tileToDrag != null)
+            if(_tileToDrag != null)
             {
-                TileDrag(Input.GetTouch(0).position);
-            }
-            else if (Input.GetMouseButton(0) && _tileToDrag != null)
-            {
-                TileDrag(Input.mousePosition);
-            }
-            else if (_tileToDrag != null)
-            {
-                if(OnGetGridPos != null)
-                    _tileToDrag.transform.position = OnGetGridPos(_tileToDrag.transform.position);
-                _tileToDrag = null;
+                if (Input.touchCount > 0 )
+                {
+                    TileDrag(Input.GetTouch(0).position);
+                }
+                else if (Input.GetMouseButton(0))
+                {
+                    TileDrag(Input.mousePosition);
+                }
+                else
+                {
+                    if (OnGetGridPos != null)
+                        _tileToDrag.transform.position = OnGetGridPos(_tileToDrag.transform.position);
+                    _tileToDrag = null;
+                }
             }
         }
 
