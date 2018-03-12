@@ -6,7 +6,7 @@ public class Grid : MonoBehaviour {
 	[SerializeField]private int _gridWidth;
 	[SerializeField]private int _gridHeight;
 
-	[SerializeField]private float _nodeDiameter = 1;
+	private float _nodeDiameter = 1;
 
 	private Node[,] _grid;
 	private float _nodeRadius;
@@ -37,8 +37,8 @@ public class Grid : MonoBehaviour {
 	public Vector2 GridToWorldPos(Vector2 gridPos) {
 		Vector2 worldPos = new Vector2 ();
 
-		worldPos.x = gridPos.x - _gridWidth / 2f + _nodeRadius;
-		worldPos.y = gridPos.y - _gridHeight / 2f + _nodeRadius;
+		worldPos.x = (gridPos.x - (_gridWidth / 2f) + transform.position.x);
+		worldPos.y = (gridPos.y - (_gridHeight / 2f) + _nodeRadius) + transform.position.y;
 
 		return worldPos;
 	}
@@ -46,24 +46,13 @@ public class Grid : MonoBehaviour {
 	public Vector2 WorldToGridPos(Vector2 worldPos) {
 		Vector2 gridPos = new Vector2 ();
 
-		worldPos.x = GetNearestMultiplyOfNodeDiameter (worldPos.x);
-		worldPos.y = GetNearestMultiplyOfNodeDiameter (worldPos.y);
 
-		gridPos.x = worldPos.x + (_gridWidth / 2f) - _nodeRadius;
-		gridPos.y = worldPos.y + (_gridHeight / 2f) - _nodeRadius;
+		gridPos.x = (worldPos.x + (_gridWidth / 2f)) - transform.position.x;
+		gridPos.y = (worldPos.y + (_gridHeight / 2f) - _nodeRadius) - transform.position.y;
 		
 		return new Vector2(gridPos.x / _nodeDiameter, gridPos.y / _nodeDiameter);
 	}
 
-	private float GetNearestMultiplyOfNodeDiameter(float n) {
-		if (n > 0) {
-			return Mathf.Ceil (n / _nodeDiameter) * _nodeDiameter;
-		} else if (n < 0) {
-			return Mathf.Floor (n / _nodeDiameter) * _nodeDiameter;
-		} else {
-			return _nodeDiameter;
-		}
-	}
 
 	public Node GetNodeFromWorldPos(Vector2 worldPos) {
 		Vector2 gridPos = WorldToGridPos (worldPos);
@@ -76,7 +65,7 @@ public class Grid : MonoBehaviour {
 	public Vector2 FindNearestPosition(Vector2 worldPos) {
 		Vector2 nearestPos = new Vector2();
 
-		nearestPos = new Vector2 (GetNearestMultiplyOfNodeDiameter (worldPos.x), GetNearestMultiplyOfNodeDiameter (worldPos.y));
+		nearestPos = new Vector2 (Mathf.Floor(worldPos.x), Mathf.Floor (worldPos.y));
 
 		Vector2 minimumPosition = _grid [0, 0].GetGridPos ();
 		Vector2 maximumPosition = _grid [_gridWidth - 1, _gridHeight - 1].GetGridPos();
