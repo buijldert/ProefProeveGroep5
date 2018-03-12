@@ -17,6 +17,10 @@ namespace UI.Base
         /// </summary>
         protected abstract void Awake();
 
+        /// <summary>
+        /// Checks if the screenState is the same as the MenuState
+        /// </summary>
+        /// <param name="state">The current state of the UI.</param>
         protected virtual void PrepareScreen(MenuState state)
         {
             if (state == screenState)
@@ -29,8 +33,14 @@ namespace UI.Base
             }
         }
 
+        /// <summary>
+        /// Will be called when we are on this particular screen
+        /// </summary>
         protected abstract void StartScreen();
 
+        /// <summary>
+        /// Will be called when we are not on this particular screen
+        /// </summary>
         protected abstract void StopScreen();
 
         protected virtual void OnDisable()

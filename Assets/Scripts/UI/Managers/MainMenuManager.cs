@@ -22,6 +22,9 @@ namespace UI.Managers
             _creditsButton.onClick.AddListener(() => OnCreditsButtonClicked());
         }
 
+        /// <summary>
+        /// Singleton code, and it sets the screenState of this script
+        /// </summary>
         protected override void Awake()
         {
             if (instance != null && instance != this)
@@ -33,11 +36,18 @@ namespace UI.Managers
             screenState = MenuState.MainMenu;
         }
 
+        /// <summary>
+        /// Calls the base class to check the current MenuState
+        /// </summary>
+        /// <param name="state">The current state of the UI.</param>
         protected override void PrepareScreen(MenuState state)
         {
             base.PrepareScreen(state);
         }
 
+        /// <summary>
+        /// Will be called when we are on this particular screen
+        /// </summary>
         protected override void StartScreen()
         {
             _playButton.onClick.AddListener(() => OnPlayButtonClicked());
@@ -47,16 +57,25 @@ namespace UI.Managers
 
         #region UI Events
 
+        /// <summary>
+        /// Method that gets called when the play button is clicked
+        /// </summary>
         private void OnPlayButtonClicked()
         {
             UIController.instance.GoToLevelSelectScreen();
         }
 
+        /// <summary>
+        /// Method that gets called when the tutorial button is clicked
+        /// </summary>
         private void OnTutorialButtonClicked()
         {
             UIController.instance.GoToTutorialScreen();
         }
 
+        /// <summary>
+        /// Method that gets called when the credits button is clicked
+        /// </summary>
         private void OnCreditsButtonClicked()
         {
             UIController.instance.GoToCreditsScreen();
@@ -64,6 +83,9 @@ namespace UI.Managers
 
         #endregion
 
+        /// <summary>
+        /// Will be called when we are not on this particular screen
+        /// </summary>
         protected override void StopScreen()
         {
             _playButton.onClick.RemoveAllListeners();
