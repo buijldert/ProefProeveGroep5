@@ -43,7 +43,6 @@ namespace Tiles {
         private void PlaceTile(Vector2 inputPos)
         {
             GameObject tileClone = Instantiate(_currentTile);
-
             tileClone.transform.position = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
         }
 
