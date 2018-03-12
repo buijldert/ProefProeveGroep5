@@ -55,7 +55,7 @@ namespace Tiles {
 
         private IEnumerator SpawnTileDelay()
         {
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForEndOfFrame();
             _canSpawnTile = true;
         }
     }

@@ -232,7 +232,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 6cc123492143b2f40ad571b2fd2a23ec,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -368,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190905913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: -0.6, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -431,7 +431,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 57216a3759316e246a5ca36f32cdd258,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 5760c630244328d4eba70c5d61a7b7f4,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -891,7 +891,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 663e568fb165664468fe6c800f919745,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -1220,7 +1220,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: e6e3724caeedcdc40b3562ff3b6d19d5,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -1508,6 +1508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grid: {fileID: 884152825}
+  _currentTile: {fileID: 0}
 --- !u!1 &1762359629
 GameObject:
   m_ObjectHideFlags: 0
