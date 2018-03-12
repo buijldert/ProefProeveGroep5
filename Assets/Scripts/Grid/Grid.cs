@@ -61,7 +61,7 @@ public class Grid : MonoBehaviour {
 		} else if (n < 0) {
 			return Mathf.Floor (n / _nodeDiameter) * _nodeDiameter;
 		} else {
-			return _nodeDiameter
+			return _nodeDiameter;
 		}
 	}
 
@@ -74,7 +74,9 @@ public class Grid : MonoBehaviour {
 	}
 
 	public Vector2 FindNearestPosition(Vector2 worldPos) {
-		Vector2 nearestPos = WorldToGridPos (worldPos);
+		Vector2 nearestPos = new Vector2();
+
+		nearestPos = new Vector2 (GetNearestMultiplyOfNodeDiameter (worldPos.x), GetNearestMultiplyOfNodeDiameter (worldPos.y));
 
 		Vector2 minimumPosition = _grid [0, 0].GetGridPos ();
 		Vector2 maximumPosition = _grid [_gridWidth - 1, _gridHeight - 1].GetGridPos();
@@ -84,7 +86,7 @@ public class Grid : MonoBehaviour {
 				return nearestPos;
 			}
 		}
-		return null;
+		return Vector2.zero;
 	}
 
 	public List<Node> GetNeighbours(Node node) {
