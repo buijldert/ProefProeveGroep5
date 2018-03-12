@@ -1,39 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Tiles {
 
-    public class DragTile : MonoBehaviour{
+    public class DragTile : MonoBehaviour {
 
+        //Delegate to get the position to snap to for the tile.
         public delegate Vector2 GetGridPosAction(Vector2 dropPos);
         public static GetGridPosAction OnGetGridPos;
 
+        //The tile that is being dragged.
         private GameObject _tileToDrag = null;
 
-        private void OnEnable(){
+        private void OnEnable() {
 
-            TilePlacer.OnChangeTile += ChangeDragTile;
+           // TilePlacer.OnChangeTile += ChangeDragTile;
         }
 
-        private void ChangeDragTile(GameObject dragTile){
+        private void ChangeDragTile(GameObject dragTile) {
 
             _tileToDrag = dragTile;
         }
 
         private void Update() {
 
-            if (Input.touchCount > 0 && _tileToDrag != null)
+            if(_tileToDrag != null)
+            {
+                DragInput();
+            }
+        }
+
+        /// <summary>
+        /// Checks for mouse or touch input to drag the tiles with.
+        /// </summary>
+        private void DragInput()
+        {
+            if (Input.touchCount > 0)
             {
                 TileDrag(Input.GetTouch(0).position);
             }
-            else if (Input.GetMouseButton(0) && _tileToDrag != null)
+            else if (Input.GetMouseButton(0))
             {
                 TileDrag(Input.mousePosition);
             }
-            else if (_tileToDrag != null)
+            else
             {
-                if(OnGetGridPos != null)
+                if (OnGetGridPos != null)
                     _tileToDrag.transform.position = OnGetGridPos(_tileToDrag.transform.position);
                 _tileToDrag = null;
             }
@@ -47,7 +58,7 @@ namespace Tiles {
 
         private void OnDisable() {
 
-            TilePlacer.OnChangeTile -= ChangeDragTile;
+            //TilePlacer.OnChangeTile -= ChangeDragTile;
         }
     }
 }

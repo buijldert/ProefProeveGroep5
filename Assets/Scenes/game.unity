@@ -232,7 +232,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 6cc123492143b2f40ad571b2fd2a23ec,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -345,7 +345,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -368,51 +368,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 190905913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &270858204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 270858206}
-  - component: {fileID: 270858205}
-  m_Layer: 0
-  m_Name: TileDragger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &270858205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 270858204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c279b18f9b41924c9545e6ac03ae9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &270858206
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 270858204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 149.5, y: 40.834747, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381296932
 GameObject:
@@ -471,7 +431,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 57216a3759316e246a5ca36f32cdd258,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -663,7 +623,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 5760c630244328d4eba70c5d61a7b7f4,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -931,7 +891,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 663e568fb165664468fe6c800f919745,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -992,6 +952,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 865043348}
+--- !u!1 &884152824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 884152826}
+  - component: {fileID: 884152825}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &884152825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884152824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de92223e2e8ba4a788c45c99acb717b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridWidth: 6
+  _gridHeight: 9
+--- !u!4 &884152826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884152824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982978566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1042,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 900, y: 1600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1217,7 +1219,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: e6e3724caeedcdc40b3562ff3b6d19d5,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -1306,6 +1308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 190905916}
+  gridItem: {fileID: 1622901953664760, guid: cf48f61520857494bbff4a41c6bf3e87, type: 2}
 --- !u!4 &1264604236
 Transform:
   m_ObjectHideFlags: 0
@@ -1317,7 +1320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293832514
 GameObject:
@@ -1456,7 +1459,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 60, y: 0}
+  m_Spacing: {x: 40, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &1312838605
@@ -1503,6 +1506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a696af54307d494bb9f3f6641cad157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _grid: {fileID: 884152825}
+  _currentTile: {fileID: 0}
 --- !u!1 &1762359629
 GameObject:
   m_ObjectHideFlags: 0

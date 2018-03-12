@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/AI.meta
 guid: cf71c64cc25654e0e9aa247e9ec14f19
 folderAsset: yes
 timeCreated: 1520852742
+=======
+guid: 748089a418a59a849bb0ae6ca46a8bd1
+folderAsset: yes
+timeCreated: 1520254428
+>>>>>>> Drag&Drop_Implementation:Assets/Art/2D/Sprites.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
