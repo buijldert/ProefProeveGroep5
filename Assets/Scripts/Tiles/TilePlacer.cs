@@ -42,8 +42,10 @@ namespace Tiles {
 
         private void PlaceTile(Vector2 inputPos)
         {
+            Vector2 nearestPos = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
+            nearestPos.y -= 1f;
             GameObject tileClone = Instantiate(_currentTile);
-            tileClone.transform.position = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
+            tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
         }
 
         public void ClickedButtonCheck()
