@@ -223,7 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gridWidth: 6
   _gridHeight: 9
-  _nodeDiameter: 1
 --- !u!4 &764758706
 Transform:
   m_ObjectHideFlags: 0
@@ -231,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764758704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.327612, y: -0.41753036, z: 0.031229798}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

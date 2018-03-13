@@ -17,6 +17,8 @@ public class Grid : MonoBehaviour {
 		_nodeRadius = _nodeDiameter / 2f;
 
 		CreateGrid ();
+
+		Debug.Log (FindNearestPosition (new Vector2 (-3.0f, -0.9f)));
 	}
 
 	private void CreateGrid() {
@@ -37,7 +39,7 @@ public class Grid : MonoBehaviour {
 	public Vector2 GridToWorldPos(Vector2 gridPos) {
 		Vector2 worldPos = new Vector2 ();
 
-		worldPos.x = (gridPos.x - (_gridWidth / 2f) + transform.position.x);
+		worldPos.x = (gridPos.x - (_gridWidth / 2f) + _nodeRadius) + transform.position.x;
 		worldPos.y = (gridPos.y - (_gridHeight / 2f) + _nodeRadius) + transform.position.y;
 
 		return worldPos;
@@ -47,7 +49,7 @@ public class Grid : MonoBehaviour {
 		Vector2 gridPos = new Vector2 ();
 
 
-		gridPos.x = (worldPos.x + (_gridWidth / 2f)) - transform.position.x;
+		gridPos.x = (worldPos.x + (_gridWidth / 2f) - _nodeRadius) - transform.position.x;
 		gridPos.y = (worldPos.y + (_gridHeight / 2f) - _nodeRadius) - transform.position.y;
 		
 		return new Vector2(gridPos.x / _nodeDiameter, gridPos.y / _nodeDiameter);
@@ -65,13 +67,15 @@ public class Grid : MonoBehaviour {
 	public Vector2 FindNearestPosition(Vector2 worldPos) {
 		Vector2 nearestPos = new Vector2();
 
+
+
 		nearestPos = new Vector2 (Mathf.Floor(worldPos.x), Mathf.Floor (worldPos.y));
 
-		Vector2 minimumPosition = _grid [0, 0].GetGridPos ();
-		Vector2 maximumPosition = _grid [_gridWidth - 1, _gridHeight - 1].GetGridPos();
+		Vector2 minimumPosition = _grid [0, 0].GetWorldPos ();
+		Vector2 maximumPosition = _grid [_gridWidth - 1, _gridHeight - 1].GetWorldPos();
 
-		if (nearestPos.x >= minimumPosition.x && nearestPos.x <= maximumPosition.x) {
-			if (nearestPos.y >= minimumPosition.y && nearestPos.y <= maximumPosition.y) {
+		if (nearestPos.x >= minimumPosition.x - _nodeRadius && nearestPos.x <= maximumPosition.x + _nodeRadius) {
+			if (nearestPos.y >= minimumPosition.y - _nodeRadius && nearestPos.y <= maximumPosition.y + _nodeRadius) {
 				return nearestPos;
 			}
 		}
