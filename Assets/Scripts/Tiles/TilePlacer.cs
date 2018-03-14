@@ -11,6 +11,9 @@ namespace Tiles {
         private int _currentLayer = 0;
 
         [SerializeField]private GameObject _currentTile = null;
+
+        [SerializeField] private Transform parent;
+
         //public static Action<GameObject> OnChangeTile;
 
         private bool _canSpawnTile;
@@ -47,6 +50,8 @@ namespace Tiles {
             {
                 nearestPos.y -= 1f;
                 GameObject tileClone = Instantiate(_currentTile);
+                tileClone.transform.SetParent(parent);
+
                 tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
                 tileClone.GetComponent<SpriteRenderer>().sortingOrder = _currentLayer;
                 _currentLayer += 1;
