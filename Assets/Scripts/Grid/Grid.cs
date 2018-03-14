@@ -67,7 +67,7 @@ public class Grid : MonoBehaviour {
 	public Vector2 FindNearestPosition(Vector2 worldPos) {
 		Vector2 nearestPos = new Vector2();
 
-		nearestPos = new Vector2 (Mathf.Floor(worldPos.x), Mathf.Floor(worldPos.y));
+		nearestPos = new Vector2 (Mathf.Floor(worldPos.x), Mathf.Floor(worldPos.y + 0.7f));
 
 		Vector2 minimumPosition = _grid [0, 0].GetWorldPos ();
 		Vector2 maximumPosition = _grid [_gridWidth - 1, _gridHeight - 1].GetWorldPos();
