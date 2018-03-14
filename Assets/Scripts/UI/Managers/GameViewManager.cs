@@ -9,6 +9,9 @@ namespace UI.Managers
     {
         public static GameViewManager instance;
 
+        [SerializeField] private GameObject _player;
+        [SerializeField] private GameObject _endpoint;
+
         [SerializeField] private Button _pauseButton;
 
         protected override void OnEnable()
@@ -27,7 +30,7 @@ namespace UI.Managers
             }
             instance = this;
 
-            screenState = MenuState.Credits;
+            screenState = MenuState.GameView;
         }
 
         /// <summary>
@@ -45,6 +48,9 @@ namespace UI.Managers
         protected override void StartScreen()
         {
             //_pauseButton.onClick.AddListener(() => OnPauseButtonClicked());
+
+            _player.SetActive(true);
+            _endpoint.SetActive(true);
 
             PlayerMovement.OnPathFinished += OnPathFinished;
         }
@@ -72,6 +78,9 @@ namespace UI.Managers
         protected override void StopScreen()
         {
             //_pauseButton.onClick.RemoveAllListeners();
+
+            _player.SetActive(false);
+            _endpoint.SetActive(false);
 
             PlayerMovement.OnPathFinished -= OnPathFinished;
         }
