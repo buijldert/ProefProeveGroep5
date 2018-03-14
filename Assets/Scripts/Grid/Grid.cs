@@ -29,7 +29,7 @@ public class Grid : MonoBehaviour {
 
 				Node node = new Node (gridPos, worldPos);
 
-				Debug.Log (gridPos + " - " + WorldToGridPos (worldPos));
+				//Debug.Log (gridPos + " - " + WorldToGridPos (worldPos));
 
 				_grid [x, y] = node;
 			}
