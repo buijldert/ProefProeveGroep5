@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bf62e334d5ea0a945a22cf171c651ac6
-timeCreated: 1521016567
+guid: a8e3d4bc2238af54a91eeb8cac70ecaa
+timeCreated: 1521019032
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -76,32 +76,12 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
-  spritePackingTag: 
+  spritePackingTag: Greybox
   userData: 
   assetBundleName: 
   assetBundleVariant: 
