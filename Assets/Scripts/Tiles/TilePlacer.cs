@@ -8,6 +8,8 @@ namespace Tiles {
     public class TilePlacer : MonoBehaviour {
         [SerializeField] private Grid _grid;
 
+        private int _currentLayer = 0;
+
         [SerializeField]private GameObject _currentTile = null;
         //public static Action<GameObject> OnChangeTile;
 
@@ -39,10 +41,16 @@ namespace Tiles {
         /// <param name="inputPos">The input position.</param>
         private void PlaceTile(Vector2 inputPos)
         {
+            
             Vector2 nearestPos = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
-            nearestPos.y -= 1f;
-            GameObject tileClone = Instantiate(_currentTile);
-            tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
+            if(nearestPos != Vector2.zero)
+            {
+                nearestPos.y -= 1f;
+                GameObject tileClone = Instantiate(_currentTile);
+                tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
+                tileClone.GetComponent<SpriteRenderer>().sortingOrder = _currentLayer;
+                _currentLayer += 1;
+            }
         }
 
         /// <summary>
