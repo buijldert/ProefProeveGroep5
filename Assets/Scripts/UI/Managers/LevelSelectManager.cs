@@ -10,6 +10,7 @@ namespace UI.Managers
         public static LevelSelectManager instance;
 
         [SerializeField] private Button _backButton;
+        [SerializeField] private Button _levelOne;
 
         protected override void OnEnable()
         {
@@ -45,6 +46,7 @@ namespace UI.Managers
         protected override void StartScreen()
         {
             _backButton.onClick.AddListener(() => OnBackButtonClicked());
+            _levelOne.onClick.AddListener(() => OnLevelOneButtonClicked());
         }
 
         #region UI Event
@@ -57,6 +59,11 @@ namespace UI.Managers
             UIController.instance.GoToMainMenuScreen();
         }
 
+        private void OnLevelOneButtonClicked()
+        {
+            UIController.instance.GoToGameViewScreen();
+        }
+
         #endregion
 
         /// <summary>
@@ -65,6 +72,7 @@ namespace UI.Managers
         protected override void StopScreen()
         {
             _backButton.onClick.RemoveAllListeners();
+            _levelOne.onClick.RemoveAllListeners();
         }
 
         protected override void OnDisable()

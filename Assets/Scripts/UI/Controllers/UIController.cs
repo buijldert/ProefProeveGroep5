@@ -9,7 +9,10 @@ namespace UI.Controllers
         MainMenu,
         Tutorial,
         Credits,
-        LevelSelect
+        LevelSelect,
+        GameView,
+        Victory,
+        Defeat,
     }
 
     public class UIController : MonoBehaviour
@@ -28,7 +31,7 @@ namespace UI.Controllers
             instance = this;
         }
 
-        public void SetState(MenuState state)
+        private void SetState(MenuState state)
         {
             TurnHoldersInactive();
             holders[(int)state].SetActive(true);
@@ -66,6 +69,24 @@ namespace UI.Controllers
         public void GoToLevelSelectScreen()
         {
             SetState(MenuState.LevelSelect);
+        }
+
+        public void GoToGameViewScreen()
+        {
+            SetState(MenuState.GameView);
+        }
+
+        /// <summary>
+        /// Replace these function with classes later on, these are supposed to be pop-ups
+        /// </summary>
+        public void GoToVictoryScreen()
+        {
+            SetState(MenuState.Victory);
+        }
+
+        public void GoToDefeatScreen()
+        {
+            SetState(MenuState.Defeat);
         }
         #endregion
     }
