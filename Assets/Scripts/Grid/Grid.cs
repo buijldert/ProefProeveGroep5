@@ -6,7 +6,7 @@ public class Grid : MonoBehaviour {
 	[SerializeField]private int _gridWidth;
 	[SerializeField]private int _gridHeight;
 
-	private float _nodeDiameter = 1;
+	private float _nodeDiameter = 1f;
 
 	private Node[,] _grid;
 	private float _nodeRadius;

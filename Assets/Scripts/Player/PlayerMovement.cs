@@ -13,8 +13,13 @@ public class PlayerMovement : MonoBehaviour {
         StartCoroutine(Move());
     }
 
+    /// <summary>
+    /// Moves the player along a set path for demo purposes.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Move()
     {
+        yield return new WaitForSeconds(20f);
         for (int i = 0; i < _path.Length; i++)
         {
             while(Vector2.Distance(transform.position, _path[i]) > .01f)
@@ -24,6 +29,8 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
         if(OnPathFinished != null)
+        {
             OnPathFinished();
+        }   
     }
 }
