@@ -18,7 +18,7 @@ public class Grid : MonoBehaviour {
 
 		CreateGrid ();
 
-		Debug.Log (FindNearestPosition (new Vector2 (-3.0f, -0.9f)));
+		//Debug.Log (FindNearestPosition (new Vector2 (-3.0f, -0.9f)));
 	}
 
 	private void CreateGrid() {
