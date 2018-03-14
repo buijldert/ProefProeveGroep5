@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour {
         StartCoroutine(Move());
     }
 
+    /// <summary>
+    /// Moves the player along a set path for demo purposes.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Move()
     {
         for (int i = 0; i < _path.Length; i++)

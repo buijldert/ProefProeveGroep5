@@ -16,13 +16,6 @@ namespace Tiles {
         public void PickTile(GameObject tileToPick)
         {
             _currentTile = tileToPick;
-            //if (_canSpawnTile)
-            //{
-            //    _canSpawnTile = false;
-            //    //GameObject newTile = Instantiate(tileToPick);
-            //    //if (OnChangeTile != null)
-            //    //    OnChangeTile(newTile);
-            //}
         }
 
         private void Update()
@@ -40,6 +33,10 @@ namespace Tiles {
             }
         }
 
+        /// <summary>
+        /// Places a tile at the input position in worldspace.
+        /// </summary>
+        /// <param name="inputPos">The input position.</param>
         private void PlaceTile(Vector2 inputPos)
         {
             Vector2 nearestPos = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
@@ -48,12 +45,19 @@ namespace Tiles {
             tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
         }
 
+        /// <summary>
+        /// Makes sure input and button clicking dont overlap.
+        /// </summary>
         public void ClickedButtonCheck()
         {
             _canSpawnTile = false;
             StartCoroutine(SpawnTileDelay());
         }
 
+        /// <summary>
+        /// Adds a delay before tiles are placeable.
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator SpawnTileDelay()
         {
             yield return new WaitForEndOfFrame();
