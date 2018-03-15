@@ -48,11 +48,10 @@ namespace Tiles {
             Vector2 nearestPos = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
             if(nearestPos != Vector2.zero)
             {
-                nearestPos.y -= 1f;
                 GameObject tileClone = Instantiate(_currentTile);
                 tileClone.transform.SetParent(parent);
 
-                tileClone.transform.position = new Vector2(nearestPos.x + 0.5f, nearestPos.y + 0.7f);
+                tileClone.transform.position = nearestPos;
                 tileClone.GetComponent<SpriteRenderer>().sortingOrder = _currentLayer;
                 _currentLayer += 1;
             }
