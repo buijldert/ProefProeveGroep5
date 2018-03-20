@@ -7,8 +7,15 @@ namespace Tiles {
 
     public class TilePlacer : MonoBehaviour {
         [SerializeField] private Grid _grid;
+		[SerializeField] private Pathfinding _finding;
 
         [SerializeField]private GameObject _currentTile = null;
+
+		private Vector2 _currentPosition;
+
+		private Node _currentNode;
+
+
         //public static Action<GameObject> OnChangeTile;
 
         private bool _canSpawnTile;
@@ -42,9 +49,19 @@ namespace Tiles {
 
         private void PlaceTile(Vector2 inputPos)
         {
-            GameObject tileClone = Instantiate(_currentTile);
-            tileClone.transform.position = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
+			_currentNode = _grid.GetNodeFromWorldPos (_grid.FindNearestPosition (Camera.main.ScreenToWorldPoint (inputPos)));
+
+			_currentNode.SetTileType (_currentTile.GetComponent<Tile> ().GetTileType ());
+
+			_finding.CalculatePath (_currentNode, PlaceTileCallback);
+
         }
+
+		public void PlaceTileCallback() {
+			GameObject tileClone = Instantiate(_currentTile);
+
+			tileClone.transform.position = _currentNode.GetWorldPos ();
+		}
 
         public void ClickedButtonCheck()
         {
