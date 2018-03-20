@@ -2016,6 +2016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891920752}
   - component: {fileID: 891920751}
+  - component: {fileID: 891920753}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -2049,6 +2050,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &891920753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 891920750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494cf953c3cf84bb494ac2f81da6efdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grid: {fileID: 891920751}
 --- !u!1 &956808822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,8 +2117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grid: {fileID: 891920751}
+  _finding: {fileID: 891920753}
   _currentTile: {fileID: 0}
-  parent: {fileID: 1117853437}
 --- !u!114 &956808825
 MonoBehaviour:
   m_ObjectHideFlags: 0

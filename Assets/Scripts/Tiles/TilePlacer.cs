@@ -7,14 +7,13 @@ namespace Tiles {
 
     public class TilePlacer : MonoBehaviour {
         [SerializeField] private Grid _grid;
-
-        private int _currentLayer = 0;
+		[SerializeField] private Pathfinding _finding;
 
         [SerializeField]private GameObject _currentTile = null;
 
-        [SerializeField] private Transform parent;
+		private Vector2 _currentPosition;
 
-        //public static Action<GameObject> OnChangeTile;
+		private Node _currentNode;
 
         private bool _canSpawnTile;
 
@@ -38,38 +37,28 @@ namespace Tiles {
             }
         }
 
-        /// <summary>
-        /// Places a tile at the input position in worldspace.
-        /// </summary>
-        /// <param name="inputPos">The input position.</param>
         private void PlaceTile(Vector2 inputPos)
         {
-            
-            Vector2 nearestPos = _grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos));
-            if(nearestPos != Vector2.zero)
-            {
-                GameObject tileClone = Instantiate(_currentTile);
-                tileClone.transform.SetParent(parent);
+			_currentNode = _grid.GetNodeFromWorldPos (_grid.FindNearestPosition (Camera.main.ScreenToWorldPoint (inputPos)));
 
-                tileClone.transform.position = nearestPos;
-                tileClone.GetComponent<SpriteRenderer>().sortingOrder = _currentLayer;
-                _currentLayer += 1;
-            }
+			_currentNode.SetTileType (_currentTile.GetComponent<Tile> ().GetTileType ());
+
+			_finding.CalculatePath (_currentNode, PlaceTileCallback);
+
         }
 
-        /// <summary>
-        /// Makes sure input and button clicking dont overlap.
-        /// </summary>
+		public void PlaceTileCallback() {
+			GameObject tileClone = Instantiate(_currentTile);
+
+			tileClone.transform.position = _currentNode.GetWorldPos ();
+		}
+
         public void ClickedButtonCheck()
         {
             _canSpawnTile = false;
             StartCoroutine(SpawnTileDelay());
         }
 
-        /// <summary>
-        /// Adds a delay before tiles are placeable.
-        /// </summary>
-        /// <returns></returns>
         private IEnumerator SpawnTileDelay()
         {
             yield return new WaitForEndOfFrame();

@@ -6,9 +6,14 @@ public enum TileType {
     TopLeft,
     BottomLeft,
     TopRight,
-    BottomRight
+    BottomRight,
+	None
 }
 
 public class Tile : MonoBehaviour {
     [SerializeField] private TileType _tileType;
+
+	public TileType GetTileType () {
+		return _tileType;
+	}
 }
