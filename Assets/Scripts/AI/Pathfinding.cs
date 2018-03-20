@@ -19,7 +19,7 @@ public class Pathfinding : MonoBehaviour {
 		List<TileType> topNeighbour = new List<TileType> (){TileType.Vertical, TileType.BottomLeft, TileType.BottomRight };
 		List<TileType> leftNeighbour = new List<TileType> (){ TileType.BottomRight, TileType.Horizontal, TileType.TopRight };
 		List<TileType> rightNeighbour = new List<TileType> (){ TileType.BottomLeft, TileType.Horizontal, TileType.TopLeft };
-		List<TileType> bottomNeighbour = new List<TileType> (){ TileType.Vertical, TileType.TopLeft, TileType.TopLeft };
+		List<TileType> bottomNeighbour = new List<TileType> (){ TileType.Vertical, TileType.TopLeft, TileType.TopRight };
 
 		//Bottom left tile
 		Dictionary<Vector2, List<TileType>> bottomLeftDic = new Dictionary<Vector2, List<TileType>> ();

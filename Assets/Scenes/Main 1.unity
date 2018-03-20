@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 91915811}
   - component: {fileID: 91915810}
   m_Layer: 5
-  m_Name: Tile_Corner_LeftUp
+  m_Name: Tile_Corner_RightUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 454271227}
   - component: {fileID: 454271226}
   m_Layer: 5
-  m_Name: Tile_Corner_RightUp
+  m_Name: Tile_Corner_LeftUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4810,6 +4810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1250b74ed825684ca137831e2ebcf0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pathfinding: {fileID: 891920753}
   _path:
   - {x: -1.5, y: -2.3}
   - {x: -1.5, y: -1.3}
