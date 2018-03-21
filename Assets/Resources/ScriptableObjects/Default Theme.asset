@@ -11,16 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ffc9fe1561b4e8d916a30787839fc3, type: 3}
   m_Name: Default Theme
   m_EditorClassIdentifier: 
-  BackdropA: {fileID: 21300000, guid: b2838ee7d47847548a58b8a0c2dccf6c, type: 3}
-  BackdropB: {fileID: 21300000, guid: 8a1d5a4af706f2c4fa217f6094f4bc7b, type: 3}
-  BackdropC: {fileID: 21300000, guid: 615e9ae1592211048822ede1456f3229, type: 3}
-  BackdropD: {fileID: 21300000, guid: 57c6ea622db379b44bc39133c486afb8, type: 3}
-  ButtonPlay: {fileID: 21300000, guid: dc14cbdcde088974c85274eb4fa40117, type: 3}
-  ButtonTutorial: {fileID: 21300000, guid: ee71f3a90ef440d45944ca6a649def40, type: 3}
-  ButtonCredits: {fileID: 21300000, guid: e126682260c3109478f58636d72cb3ba, type: 3}
-  ButtonBack: {fileID: 21300000, guid: a6e78066ebd83ab4b8be3b75a5c1d274, type: 3}
-  ButtonLevelOpen: {fileID: 21300000, guid: f0822d614a73e82419d18cd62aee87e2, type: 3}
-  ButtonLevelLocked: {fileID: 21300000, guid: a90173815bcb356418cb0565ed03ee1c, type: 3}
+  BackdropA: {fileID: 21300000, guid: e027b18973c67f54d9a3423db27c9c9d, type: 3}
+  BackdropB: {fileID: 21300000, guid: beacdc2d62794f44a8943b397873c89a, type: 3}
+  BackdropC: {fileID: 21300000, guid: e027b18973c67f54d9a3423db27c9c9d, type: 3}
+  BackdropD: {fileID: 21300000, guid: e027b18973c67f54d9a3423db27c9c9d, type: 3}
+  ButtonPlay: {fileID: 21300000, guid: 8318723907dd69b4d867891dd35cddc5, type: 3}
+  ButtonTutorial: {fileID: 21300000, guid: 4d09e5eca4971b94fb4d97b622f3c39d, type: 3}
+  ButtonCredits: {fileID: 21300000, guid: 3412ccd04ec22ff4983637e1d861ce15, type: 3}
+  ButtonBack: {fileID: 21300000, guid: f30d4e5410f9bcf46ad084b435ed49e4, type: 3}
+  ButtonLevelOpen: {fileID: 21300000, guid: 1c08903d8c2c2894da400fcabbeec36d, type: 3}
+  ButtonLevelLocked: {fileID: 21300000, guid: f748d208e493dc24ab81d9e5d441909c, type: 3}
   GameBackground: {fileID: 21300000, guid: 1bf15ebf47aae8844bd5a2b381fdb54a, type: 3}
   Endpoint: {fileID: 21300000, guid: 9aaac22a9ea6af54ea32fbfecd0f7d24, type: 3}
   Lava: {fileID: 21300000, guid: b776f013013433d499f7cc1b4125d800, type: 3}
