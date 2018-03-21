@@ -13,6 +13,10 @@ public class UITile : MonoBehaviour
         UIController.instance.UpdateTheme();
     }
 
+    /// <summary>
+    /// DEMO FIX HET
+    /// </summary>
+    /// <param name="UITheme">UIT heme.</param>
     private void OnThemeChanged(UITheme UITheme)
     {
         Sprite temp = null;
@@ -26,17 +30,18 @@ public class UITile : MonoBehaviour
                 temp = UITheme.Vertical;
                 break;
             case TileType.TopLeft:
-                temp = UITheme.CornerLeftUp;
+                temp = UITheme.CornerRightUp;
                 break;
             case TileType.BottomLeft:
                 temp = UITheme.CornerLeft;
                 break;
             case TileType.TopRight:
-                temp = UITheme.CornerRightUp;
+                temp = UITheme.CornerLeftUp;
                 break;
             case TileType.BottomRight:
                 temp = UITheme.CornerRight;
                 break;
+
         }
 
         GetComponent<Image>().sprite = temp;
