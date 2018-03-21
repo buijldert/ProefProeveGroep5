@@ -52,7 +52,7 @@ namespace UI.Managers
             _player.SetActive(true);
             _endpoint.SetActive(true);
 
-            PlayerMovement.OnPathFinished += OnPathFinished;
+            //PlayerMovement.OnPathFinished += OnPathFinished;
         }
 
         private void OnPathFinished()
@@ -82,7 +82,7 @@ namespace UI.Managers
             _player.SetActive(false);
             _endpoint.SetActive(false);
 
-            PlayerMovement.OnPathFinished -= OnPathFinished;
+            //PlayerMovement.OnPathFinished -= OnPathFinished;
         }
 
         protected override void OnDisable()
