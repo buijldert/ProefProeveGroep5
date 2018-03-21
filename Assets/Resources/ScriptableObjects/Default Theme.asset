@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ffc9fe1561b4e8d916a30787839fc3, type: 3}
+  m_Name: Default Theme
+  m_EditorClassIdentifier: 
+  BackdropA: {fileID: 21300000, guid: b2838ee7d47847548a58b8a0c2dccf6c, type: 3}
+  BackdropB: {fileID: 21300000, guid: 8a1d5a4af706f2c4fa217f6094f4bc7b, type: 3}
+  BackdropC: {fileID: 21300000, guid: 615e9ae1592211048822ede1456f3229, type: 3}
+  BackdropD: {fileID: 21300000, guid: 57c6ea622db379b44bc39133c486afb8, type: 3}
+  ButtonPlay: {fileID: 21300000, guid: dc14cbdcde088974c85274eb4fa40117, type: 3}
+  ButtonTutorial: {fileID: 21300000, guid: ee71f3a90ef440d45944ca6a649def40, type: 3}
+  ButtonCredits: {fileID: 21300000, guid: e126682260c3109478f58636d72cb3ba, type: 3}
+  ButtonBack: {fileID: 21300000, guid: a6e78066ebd83ab4b8be3b75a5c1d274, type: 3}
+  ButtonLevelOpen: {fileID: 21300000, guid: f0822d614a73e82419d18cd62aee87e2, type: 3}
+  ButtonLevelLocked: {fileID: 21300000, guid: a90173815bcb356418cb0565ed03ee1c, type: 3}
+  GameBackground: {fileID: 21300000, guid: 1bf15ebf47aae8844bd5a2b381fdb54a, type: 3}
+  Endpoint: {fileID: 21300000, guid: 9aaac22a9ea6af54ea32fbfecd0f7d24, type: 3}
+  Lava: {fileID: 21300000, guid: b776f013013433d499f7cc1b4125d800, type: 3}
+  VictoryBackground: {fileID: 21300000, guid: e1c7c9461cd68164cbbff8fdd68b046f, type: 3}
+  DefeatBackground: {fileID: 21300000, guid: 7a4e2d4ddf49de241b98dded8ca06c4e, type: 3}
+  Horizontal: {fileID: 21300000, guid: 43850a269d085ae42bc421fbe7ff84af, type: 3}
+  Vertical: {fileID: 21300000, guid: 347249a079f00044897eb516e562dcf8, type: 3}
+  CornerRightUp: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
+  CornerLeftUp: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  CornerLeft: {fileID: 21300000, guid: 814cb598994300546bdcc55ea3b766e0, type: 3}
+  CornerRight: {fileID: 21300000, guid: 3c2c5b5fab224954290a9e3087a0da30, type: 3}
