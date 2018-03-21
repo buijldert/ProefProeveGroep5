@@ -9,6 +9,7 @@ namespace UI.Managers
     {
         public static TutorialManager instance;
 
+        [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _backButton;
 
@@ -43,6 +44,13 @@ namespace UI.Managers
         }
 
         #region UI Event
+
+        protected override void OnThemeUpdated(UITheme UITheme)
+        {
+            _screenBackground.sprite = UITheme.BackdropC;
+            _playButton.GetComponent<Image>().sprite = UITheme.ButtonPlay;
+            _backButton.GetComponent<Image>().sprite = UITheme.ButtonBack;
+        }
 
         /// <summary>
         /// Method that gets called when the play button is clicked

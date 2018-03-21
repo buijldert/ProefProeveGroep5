@@ -9,6 +9,7 @@ namespace UI.Managers
     {
         public static VictoryManager instance;
 
+        [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _backButton;
 
         protected override void OnEnable()
@@ -41,6 +42,12 @@ namespace UI.Managers
         }
 
         #region UI Event
+
+        protected override void OnThemeUpdated(UITheme UITheme)
+        {
+            _screenBackground.sprite = UITheme.VictoryBackground;
+            _backButton.GetComponent<Image>().sprite = UITheme.ButtonBack;
+        }
 
         /// <summary>
         /// Method that gets called when the back button is clicked

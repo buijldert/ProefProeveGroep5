@@ -10,6 +10,7 @@ namespace UI.Base
         protected virtual void OnEnable()
         {
             UIController.OnScreenChanged += PrepareScreen;
+            UIController.OnThemeChanged += OnThemeUpdated;
         }
 
         /// <summary>
@@ -33,6 +34,8 @@ namespace UI.Base
             }
         }
 
+        protected abstract void OnThemeUpdated(UITheme UITheme);
+
         /// <summary>
         /// Will be called when we are on this particular screen
         /// </summary>
@@ -46,6 +49,7 @@ namespace UI.Base
         protected virtual void OnDisable()
         {
             UIController.OnScreenChanged -= PrepareScreen;
+            UIController.OnThemeChanged -= OnThemeUpdated;
         }
     }
 }

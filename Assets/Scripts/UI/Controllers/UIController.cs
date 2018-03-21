@@ -19,7 +19,9 @@ namespace UI.Controllers
     {
         public static UIController instance;
         public static Action<MenuState> OnScreenChanged;
+        public static Action<UITheme> OnThemeChanged;
 
+        [SerializeField] private UITheme UITheme;
         [SerializeField] private GameObject[] holders;
 
         private void Awake()
@@ -29,6 +31,11 @@ namespace UI.Controllers
                 Destroy(this.gameObject);
             }
             instance = this;
+        }
+
+        private void Start()
+        {
+            UpdateTheme();
         }
 
         private void SetState(MenuState state)
@@ -47,6 +54,14 @@ namespace UI.Controllers
             foreach (GameObject holder in holders.Where(holder => holder.activeSelf))
             {
                 holder.SetActive(false);
+            }
+        }
+
+        public void UpdateTheme()
+        {
+            if (OnThemeChanged != null)
+            {
+                OnThemeChanged(UITheme);
             }
         }
 
