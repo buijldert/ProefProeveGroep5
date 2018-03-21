@@ -12,6 +12,7 @@ namespace UI.Managers
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _endpoint;
 
+        [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _pauseButton;
 
         protected override void OnEnable()
@@ -61,6 +62,12 @@ namespace UI.Managers
         }
 
         #region UI Event
+
+        protected override void OnThemeUpdated(UITheme UITheme)
+        {
+            _screenBackground.sprite = UITheme.GameBackground;
+            _endpoint.GetComponent<Image>().sprite = UITheme.Endpoint;
+        }
 
         /// <summary>
         /// Method that gets called when the back button is clicked

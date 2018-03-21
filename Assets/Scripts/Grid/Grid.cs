@@ -16,9 +16,7 @@ public class Grid : MonoBehaviour {
 
 		_nodeRadius = _nodeDiameter / 2f;
 
-		CreateGrid ();
-
-		Debug.Log (GetNeighbours(_grid[0,0]));
+        CreateGrid();
 	}
 
 	private void CreateGrid() {

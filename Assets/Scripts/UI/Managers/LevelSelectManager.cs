@@ -9,6 +9,7 @@ namespace UI.Managers
     {
         public static LevelSelectManager instance;
 
+        [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _backButton;
         [SerializeField] private Button _levelOne;
 
@@ -50,6 +51,13 @@ namespace UI.Managers
         }
 
         #region UI Event
+
+        protected override void OnThemeUpdated(UITheme UITheme)
+        {
+            _screenBackground.sprite = UITheme.BackdropB;
+            _backButton.GetComponent<Image>().sprite = UITheme.ButtonBack;
+            _levelOne.GetComponent<Image>().sprite = UITheme.ButtonLevelOpen;
+        }
 
         /// <summary>
         /// Method that gets called when the back button is clicked

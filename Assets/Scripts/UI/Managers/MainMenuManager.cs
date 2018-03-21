@@ -9,6 +9,7 @@ namespace UI.Managers
     {
         public static MainMenuManager instance;
 
+        [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _tutorialButton;
         [SerializeField] private Button _creditsButton;
@@ -56,6 +57,14 @@ namespace UI.Managers
         }
 
         #region UI Events
+
+        protected override void OnThemeUpdated(UITheme UITheme)
+        {
+            _screenBackground.sprite = UITheme.BackdropA;
+            _playButton.GetComponent<Image>().sprite = UITheme.ButtonPlay;
+            _tutorialButton.GetComponent<Image>().sprite = UITheme.ButtonTutorial;
+            _creditsButton.GetComponent<Image>().sprite = UITheme.ButtonCredits;
+        }
 
         /// <summary>
         /// Method that gets called when the play button is clicked
