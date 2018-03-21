@@ -49,10 +49,9 @@ namespace UI.Managers
         /// </summary>
         protected override void StartScreen()
         {
-            //_pauseButton.onClick.AddListener(() => OnPauseButtonClicked());
+            _pauseButton.onClick.AddListener(() => OnPauseButtonClicked());
 
             _player.SetActive(true);
-            _endpoint.SetActive(true);
 
             //PlayerMovement.OnPathFinished += OnPathFinished;
         }
@@ -68,7 +67,7 @@ namespace UI.Managers
         {
             _lava.sprite = UITheme.Lava;
             _screenBackground.sprite = UITheme.GameBackground;
-            _endpoint.GetComponent<SpriteRenderer>().sprite = UITheme.Endpoint;
+            _endpoint.GetComponent<Image>().sprite = UITheme.Endpoint;
         }
 
         /// <summary>
@@ -86,10 +85,9 @@ namespace UI.Managers
         /// </summary>
         protected override void StopScreen()
         {
-            //_pauseButton.onClick.RemoveAllListeners();
+            _pauseButton.onClick.RemoveAllListeners();
 
             _player.SetActive(false);
-            _endpoint.SetActive(false);
 
             //PlayerMovement.OnPathFinished -= OnPathFinished;
         }

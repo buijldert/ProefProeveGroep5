@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Tiles;
 using UnityEngine;
 using UnityEngine.UI;
+using UI.Controllers;
 
 namespace Environment {
     public class Lava : MonoBehaviour {
@@ -39,8 +40,8 @@ namespace Environment {
                 //print(_mainCamera.ScreenToWorldPoint(transform.position).y);
                 if (transform.position.y > _player.position.y)
                 {
-                    
-                    print("dead");
+                    UIController.instance.GoToDefeatScreen();
+
                     if (OnLavaEngulfs != null)
                         OnLavaEngulfs();
 

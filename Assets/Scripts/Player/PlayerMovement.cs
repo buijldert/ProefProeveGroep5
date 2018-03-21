@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UI.Controllers;
 
 public class PlayerMovement : MonoBehaviour {
     public static Action OnPlayerVictory;
@@ -29,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
                     _isVictorious = true;
                     if (OnPlayerVictory != null)
                         OnPlayerVictory();
+
+                    UIController.instance.GoToVictoryScreen();
                 }
             }
         }

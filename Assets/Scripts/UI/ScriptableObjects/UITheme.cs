@@ -15,6 +15,14 @@ public class UITheme : ScriptableObject
     public Sprite ButtonCredits;
     public Sprite ButtonBack;
 
+    [Header("Pause Screen")]
+    [Tooltip("The one visible in the game")]
+    public Sprite PauseBackground;
+    public Sprite ButtonPause;
+    public Sprite ButtonResume;
+    public Sprite ButtonSoundToggle;
+    public Sprite ButtonMenu;
+
     [Header("Level Selection")]
     [Tooltip("For demo its only the 'Level 1'-button")]
     public Sprite ButtonLevelOpen;

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 using UI.Controllers;
 
 namespace UI.Managers
@@ -9,14 +8,15 @@ namespace UI.Managers
     {
         public static PauseScreenManager instance;
 
-        public static Action<bool> IsGamePaused;
-
         [SerializeField] private GameObject _pauseScreen;
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _toggleSound;
         [SerializeField] private Button _returnToMenu;
 
-        private bool _isSoundActive; // Demo, remove this in final build
+        private void OnEnable()
+        {
+            UIController.OnThemeChanged += OnThemeUpdated;
+        }
 
         /// <summary>
         /// Singleton code.
@@ -33,7 +33,6 @@ namespace UI.Managers
         private void Start()
         {
             _pauseScreen.SetActive(false);
-            _toggleSound.GetComponent<Image>().color = Color.green;
         }
 
         /// <summary>
@@ -42,7 +41,8 @@ namespace UI.Managers
         public void Init()
         {
             SubscribeToEvents();
-            IsGamePausedActionCall(true);
+
+            Time.timeScale = 0f;
             _pauseScreen.SetActive(true);
         }
 
@@ -58,12 +58,20 @@ namespace UI.Managers
 
         #region UI Events
 
+        private void OnThemeUpdated(UITheme UITheme)
+        {
+            _pauseScreen.GetComponent<Image>().sprite = UITheme.PauseBackground;
+            _resumeButton.GetComponent<Image>().sprite = UITheme.ButtonResume;
+            _toggleSound.GetComponent<Image>().sprite = UITheme.ButtonSoundToggle;
+            _returnToMenu.GetComponent<Image>().sprite = UITheme.ButtonMenu;
+        }
+
         /// <summary>
         /// Method that gets called when the resume button is clicked
         /// </summary>
         private void OnResumeButtonClicked()
         {
-            IsGamePausedActionCall(false);
+            Time.timeScale = 1f;
             _pauseScreen.SetActive(false);
         }
 
@@ -74,9 +82,7 @@ namespace UI.Managers
         /// </summary>
         private void OnToggleSoundButtonClicked()
         {
-            _isSoundActive = !_isSoundActive;
-            Color color = (_isSoundActive) ? Color.green : Color.red;
-            _toggleSound.GetComponent<Image>().color = color;
+            //
         }
 
         /// <summary>
@@ -85,24 +91,13 @@ namespace UI.Managers
         private void OnReturnToMenuButtonClicked()
         {
             UnsubscribeToEvents();
+            Time.timeScale = 1f;
 
             _pauseScreen.SetActive(false);
             UIController.instance.GoToMainMenuScreen();
         }
 
         #endregion
-
-        /// <summary>
-        /// Function to clean up the code just a tiny bit. Will fire the IsGamePaused action.
-        /// </summary>
-        /// <param name="isGamePaused">If set to <c>true</c> is game paused.</param>
-        private void IsGamePausedActionCall(bool isGamePaused)
-        {
-            if (IsGamePaused != null)
-            {
-                IsGamePaused(isGamePaused);
-            }
-        }
 
         /// <summary>
         /// Unsubscribes to events.
@@ -116,6 +111,7 @@ namespace UI.Managers
 
         private void OnDisable()
         {
+            UIController.OnThemeChanged -= OnThemeUpdated;
             UnsubscribeToEvents();
         }
     }
