@@ -6,6 +6,9 @@ using UnityEngine;
 namespace Tiles {
 
     public class TilePlacer : MonoBehaviour {
+
+        public static Action OnLavaStart;
+
         [SerializeField] private Grid _grid;
 		[SerializeField] private Pathfinding _finding;
 
@@ -16,6 +19,8 @@ namespace Tiles {
 		private Node _currentNode;
 
         private bool _canSpawnTile;
+
+        private int _numberOfTilesPlaced;
 
         public void PickTile(GameObject tileToPick)
         {
@@ -28,7 +33,8 @@ namespace Tiles {
             {
                 if (Input.touchCount > 0)
                 {
-                    PlaceTile(Input.GetTouch(0).position);
+                    if(Input.GetTouch(0).phase == TouchPhase.Began)
+                        PlaceTile(Input.GetTouch(0).position);
                 }
                 else if (Input.GetMouseButtonDown(0))
                 {
@@ -44,6 +50,11 @@ namespace Tiles {
 			_currentNode.SetTileType (_currentTile.GetComponent<Tile> ().GetTileType ());
 
 			_finding.CalculatePath (_currentNode, PlaceTileCallback);
+
+            _numberOfTilesPlaced++;
+            if (_numberOfTilesPlaced == 2)
+                if(OnLavaStart != null)
+                    OnLavaStart();
 
         }
 

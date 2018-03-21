@@ -18,7 +18,7 @@ public class Grid : MonoBehaviour {
 
 		CreateGrid ();
 
-		Debug.Log (GetNeighbours(_grid[0,0]));
+		//Debug.Log (GetNeighbours(_grid[0,0]));
 	}
 
 	private void CreateGrid() {
@@ -59,7 +59,7 @@ public class Grid : MonoBehaviour {
 
 
 		Vector2 arrayGridPos = new Vector2 (gridPos.x / _nodeDiameter, gridPos.y / _nodeDiameter);
-		Debug.Log (new Vector2 ((int)arrayGridPos.x, (int)arrayGridPos.y));
+		//Debug.Log (new Vector2 ((int)arrayGridPos.x, (int)arrayGridPos.y));
 		Node node = _grid [(int)arrayGridPos.x, (int)arrayGridPos.y];
 
 //		node.SetWalkable (false);
