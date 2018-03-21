@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: 5760c630244328d4eba70c5d61a7b7f4,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 6cc123492143b2f40ad571b2fd2a23ec,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileType: 4
+  _tileType: 2
 --- !u!1 &104724276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
           m_MethodName: PickTile
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1622901953664760, guid: 6cc123492143b2f40ad571b2fd2a23ec,
+            m_ObjectArgument: {fileID: 1622901953664760, guid: 5760c630244328d4eba70c5d61a7b7f4,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -1134,7 +1134,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileType: 2
+  _tileType: 4
 --- !u!1 &524668982
 GameObject:
   m_ObjectHideFlags: 0
