@@ -13,6 +13,7 @@ namespace UI.Managers
         [SerializeField] private GameObject _endpoint;
 
         [SerializeField] private Image _screenBackground;
+        [SerializeField] private Image _lava;
         [SerializeField] private Button _pauseButton;
 
         protected override void OnEnable()
@@ -65,6 +66,7 @@ namespace UI.Managers
 
         protected override void OnThemeUpdated(UITheme UITheme)
         {
+            _lava.sprite = UITheme.Lava;
             _screenBackground.sprite = UITheme.GameBackground;
             _endpoint.GetComponent<SpriteRenderer>().sprite = UITheme.Endpoint;
         }

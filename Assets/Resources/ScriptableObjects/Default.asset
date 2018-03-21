@@ -23,5 +23,12 @@ MonoBehaviour:
   ButtonLevelLocked: {fileID: 21300000, guid: a90173815bcb356418cb0565ed03ee1c, type: 3}
   GameBackground: {fileID: 21300000, guid: 1bf15ebf47aae8844bd5a2b381fdb54a, type: 3}
   Endpoint: {fileID: 21300000, guid: 9aaac22a9ea6af54ea32fbfecd0f7d24, type: 3}
+  Lava: {fileID: 21300000, guid: b776f013013433d499f7cc1b4125d800, type: 3}
   VictoryBackground: {fileID: 21300000, guid: 29153f8d84abadd45a8578ea5fd2b874, type: 3}
   DefeatBackground: {fileID: 21300000, guid: 09854073587b824449710aadf9fdb11e, type: 3}
+  Horizontal: {fileID: 21300000, guid: 43850a269d085ae42bc421fbe7ff84af, type: 3}
+  Vertical: {fileID: 21300000, guid: 347249a079f00044897eb516e562dcf8, type: 3}
+  CornerRightUp: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
+  CornerLeftUp: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  CornerLeft: {fileID: 21300000, guid: 814cb598994300546bdcc55ea3b766e0, type: 3}
+  CornerRight: {fileID: 21300000, guid: 3c2c5b5fab224954290a9e3087a0da30, type: 3}
