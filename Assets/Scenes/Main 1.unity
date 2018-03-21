@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 91915812}
   - component: {fileID: 91915811}
   - component: {fileID: 91915810}
+  - component: {fileID: 91915813}
   m_Layer: 5
   m_Name: Tile_Corner_RightUp
   m_TagString: Untagged
@@ -256,7 +257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 377.68878, y: -138.905}
+  m_AnchoredPosition: {x: 377.49997, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91915810
@@ -340,6 +341,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 91915808}
+--- !u!114 &91915813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 91915808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 4
 --- !u!1 &104724276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1041,7 @@ GameObject:
   - component: {fileID: 454271228}
   - component: {fileID: 454271227}
   - component: {fileID: 454271226}
+  - component: {fileID: 454271229}
   m_Layer: 5
   m_Name: Tile_Corner_LeftUp
   m_TagString: Untagged
@@ -1050,7 +1064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 522.6888, y: -138.905}
+  m_AnchoredPosition: {x: 522.5, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454271226
@@ -1134,6 +1148,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454271224}
+--- !u!114 &454271229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 454271224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 2
 --- !u!1 &524668982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,6 +3484,7 @@ GameObject:
   - component: {fileID: 1523921504}
   - component: {fileID: 1523921503}
   - component: {fileID: 1523921502}
+  - component: {fileID: 1523921505}
   m_Layer: 5
   m_Name: Tile_Vertical
   m_TagString: Untagged
@@ -3480,7 +3507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 232.68878, y: -138.905}
+  m_AnchoredPosition: {x: 232.49997, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523921502
@@ -3564,6 +3591,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1523921500}
+--- !u!114 &1523921505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523921500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 1
 --- !u!1 &1533972581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3649,6 +3688,7 @@ GameObject:
   - component: {fileID: 1548225424}
   - component: {fileID: 1548225423}
   - component: {fileID: 1548225422}
+  - component: {fileID: 1548225425}
   m_Layer: 5
   m_Name: Tile_Corner_Right
   m_TagString: Untagged
@@ -3671,7 +3711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 812.6888, y: -138.905}
+  m_AnchoredPosition: {x: 812.5, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548225422
@@ -3755,6 +3795,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1548225420}
+--- !u!114 &1548225425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548225420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 5
 --- !u!1 &1562021541
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,6 +4187,7 @@ GameObject:
   - component: {fileID: 1598830066}
   - component: {fileID: 1598830065}
   - component: {fileID: 1598830064}
+  - component: {fileID: 1598830067}
   m_Layer: 5
   m_Name: Tile_Horizontal
   m_TagString: Untagged
@@ -4157,7 +4210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.68878, y: -138.905}
+  m_AnchoredPosition: {x: 87.49997, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598830064
@@ -4241,6 +4294,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598830062}
+--- !u!114 &1598830067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598830062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 0
 --- !u!1 &1606834980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,6 +4518,7 @@ MonoBehaviour:
   _player: {fileID: 1930446453}
   _endpoint: {fileID: 1117853435}
   _screenBackground: {fileID: 1016989460}
+  _lava: {fileID: 2067146783}
   _pauseButton: {fileID: 0}
 --- !u!114 &1622342878
 MonoBehaviour:
@@ -5287,6 +5353,7 @@ GameObject:
   - component: {fileID: 2052777046}
   - component: {fileID: 2052777045}
   - component: {fileID: 2052777044}
+  - component: {fileID: 2052777047}
   m_Layer: 5
   m_Name: Tile_Corner_Left
   m_TagString: Untagged
@@ -5309,7 +5376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 667.6888, y: -138.905}
+  m_AnchoredPosition: {x: 667.5, y: -138.905}
   m_SizeDelta: {x: 125, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052777044
@@ -5393,6 +5460,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2052777042}
+--- !u!114 &2052777047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052777042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1383bab14729490e89a552b76363d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileType: 3
 --- !u!1 &2067146780
 GameObject:
   m_ObjectHideFlags: 0
