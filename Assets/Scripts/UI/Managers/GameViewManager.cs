@@ -66,7 +66,7 @@ namespace UI.Managers
         protected override void OnThemeUpdated(UITheme UITheme)
         {
             _screenBackground.sprite = UITheme.GameBackground;
-            _endpoint.GetComponent<Image>().sprite = UITheme.Endpoint;
+            _endpoint.GetComponent<SpriteRenderer>().sprite = UITheme.Endpoint;
         }
 
         /// <summary>
