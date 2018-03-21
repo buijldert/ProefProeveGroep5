@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621b7f40020593046b9030698b4a110b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lavaSpeed: 0.25
   _mainCamera: {fileID: 606878829}
   _player: {fileID: 946768297}
 --- !u!1 &833540081
@@ -2915,6 +2916,7 @@ MonoBehaviour:
   _player: {fileID: 946768293}
   _endpoint: {fileID: 1507753939}
   _screenBackground: {fileID: 1556816183}
+  _lava: {fileID: 822732059}
   _pauseButton: {fileID: 0}
 --- !u!114 &1266112830
 MonoBehaviour:

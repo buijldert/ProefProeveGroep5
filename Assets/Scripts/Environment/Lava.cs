@@ -9,7 +9,7 @@ namespace Environment {
     public class Lava : MonoBehaviour {
         public static Action OnLavaEngulfs;
 
-        private float _lavaSpeed = 0.75f;
+        [SerializeField]private float _lavaSpeed = 0.75f;
 
         [SerializeField]private Camera _mainCamera;
         [SerializeField]private Transform _player;

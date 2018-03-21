@@ -40,6 +40,12 @@ namespace Tiles {
                 {
                     PlaceTile(Input.mousePosition);
                 }
+
+                //if(Input.GetMouseButtonDown(1))
+                //{
+                //    print("removing tile");
+                //    RemoveTile(Input.mousePosition);
+                //}
             }
         }
 
@@ -56,6 +62,26 @@ namespace Tiles {
                 if(OnLavaStart != null)
                     OnLavaStart();
 
+        }
+
+        private void RemoveTile(Vector2 inputPos)
+        {
+            _currentNode = _grid.GetNodeFromWorldPos(_grid.FindNearestPosition(Camera.main.ScreenToWorldPoint(inputPos)));
+            _currentNode.SetTileType(TileType.None);
+
+            //RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(inputPos), Vector2.zero);
+            //if(hits.Length > 0)
+            //{
+            //    print("multiple hits");
+            //    for (int i = 0; i < hits.Length; i++)
+            //    {
+            //        print(hits[i].transform.tag);
+            //        if(hits[i].transform.tag == "Tile")
+            //        {
+            //            Destroy(hits[i].transform.gameObject);
+            //        }
+            //    }
+            //}
         }
 
 		public void PlaceTileCallback() {

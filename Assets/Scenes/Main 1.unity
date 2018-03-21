@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ RectTransform:
   m_LocalScale: {x: 0.9999933, y: 0.9999933, z: 0.9999933}
   m_Children: []
   m_Father: {fileID: 956808823}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -327,7 +327,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1060,7 +1060,7 @@ RectTransform:
   m_LocalScale: {x: 0.9999933, y: 0.9999933, z: 0.9999933}
   m_Children: []
   m_Father: {fileID: 956808823}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2119,8 +2119,8 @@ RectTransform:
   m_Children:
   - {fileID: 1598830063}
   - {fileID: 1523921501}
-  - {fileID: 91915809}
   - {fileID: 454271225}
+  - {fileID: 91915809}
   - {fileID: 2052777043}
   - {fileID: 1548225421}
   m_Father: {fileID: 1878506308}
@@ -5501,6 +5501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621b7f40020593046b9030698b4a110b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lavaSpeed: 0.1
   _mainCamera: {fileID: 2030270450}
   _player: {fileID: 1930446457}
 --- !u!224 &2067146782
