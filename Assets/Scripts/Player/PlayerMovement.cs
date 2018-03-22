@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UI.Controllers;
+using Environment;
 
 public class PlayerMovement : MonoBehaviour {
     public static Action OnPlayerVictory;
@@ -10,9 +11,22 @@ public class PlayerMovement : MonoBehaviour {
     private int _pathIndex;
 
     private float _movementSpeed = 1.5f;
-
     private float _endPointY = 3.6f;
+
     private bool _isVictorious;
+    
+    private Vector2 _startPos;
+
+    private void OnEnable()
+    {
+        //Lava.OnLavaEngulfs -= ResetPlayer;
+        //PlayerMovement.OnPlayerVictory -= ResetPlayer;
+    }
+
+    private void Start()
+    {
+        _startPos = transform.position;
+    }
 
     private void Update()
     {
@@ -33,5 +47,16 @@ public class PlayerMovement : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void ResetPlayer()
+    {
+        transform.position = _startPos;
+    }
+
+    private void OnDisable()
+    {
+        //Lava.OnLavaEngulfs -= ResetPlayer;
+        //PlayerMovement.OnPlayerVictory -= ResetPlayer;
     }
 }

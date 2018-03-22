@@ -2,12 +2,15 @@
 using UnityEngine;
 using UI.Base;
 using UI.Controllers;
+using System;
 
 namespace UI.Managers
 {
     public class LevelSelectManager : ScreenManager
     {
         public static LevelSelectManager instance;
+
+        public static Action OnGameStarted;
 
         [SerializeField] private Image _screenBackground;
         [SerializeField] private Button _backButton;
@@ -70,6 +73,9 @@ namespace UI.Managers
         private void OnLevelOneButtonClicked()
         {
             UIController.instance.GoToGameViewScreen();
+
+            if (OnGameStarted != null)
+                OnGameStarted();
         }
 
         #endregion

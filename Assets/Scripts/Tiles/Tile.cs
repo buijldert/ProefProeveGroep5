@@ -12,6 +12,7 @@ namespace Tiles
         BottomLeft,
         TopRight,
         BottomRight,
+        Blocked,
         None
     }
 
@@ -21,7 +22,7 @@ namespace Tiles
 
         private void OnEnable()
         {
-            //UIController.OnThemeChanged += OnThemeChanged;
+            UIController.OnThemeChanged += OnThemeChanged;
             UIController.instance.UpdateTheme();
         }
 
@@ -62,7 +63,7 @@ namespace Tiles
 
         private void OnDisable()
         {
-            //UIController.OnThemeChanged -= OnThemeChanged;
+            UIController.OnThemeChanged -= OnThemeChanged;
         }
     }
 }

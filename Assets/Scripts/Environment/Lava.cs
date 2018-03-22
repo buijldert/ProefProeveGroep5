@@ -37,7 +37,6 @@ namespace Environment {
             while (transform.position.y < stageDimensions.y)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, stageDimensions.y), _lavaSpeed * Time.deltaTime);
-                //print(_mainCamera.ScreenToWorldPoint(transform.position).y);
                 if (transform.position.y > _player.position.y)
                 {
                     UIController.instance.GoToDefeatScreen();

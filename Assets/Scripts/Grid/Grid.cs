@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Environment;
+using System.Collections;
 using System.Collections.Generic;
+using Tiles;
 using UnityEngine;
 
 public class Grid : MonoBehaviour {
@@ -11,7 +13,7 @@ public class Grid : MonoBehaviour {
 	private Node[,] _grid;
 	private float _nodeRadius;
 
-	private void Start() {
+	private void Awake() {
 		_grid = new Node[_gridWidth, _gridHeight];
 
 		_nodeRadius = _nodeDiameter / 2f;
@@ -21,7 +23,13 @@ public class Grid : MonoBehaviour {
 		//Debug.Log (GetNeighbours(_grid[0,0]));
 	}
 
-	private void CreateGrid() {
+    private void OnEnable()
+    {
+        //Lava.OnLavaEngulfs += ResetGrid;
+        //PlayerMovement.OnPlayerVictory += ResetGrid;
+    }
+
+    private void CreateGrid() {
 		for (int x = 0; x < _gridWidth; x++) {
 			for (int y = 0; y < _gridHeight; y++) {
 				Vector2 gridPos = new Vector2 (x, y);
@@ -33,6 +41,17 @@ public class Grid : MonoBehaviour {
 			}
 		}
 	}
+
+    private void ResetGrid()
+    {
+        for (int x = 0; x < _gridWidth; x++)
+        {
+            for (int y = 0; y < _gridHeight; y++)
+            {
+                _grid[x, y].SetTileType(TileType.None);
+            }
+        }
+    }
 
 	public Vector2 GridToWorldPos(Vector2 gridPos) {
 		Vector2 worldPos = new Vector2 ();
@@ -116,4 +135,10 @@ public class Grid : MonoBehaviour {
 			}
 		}
 	}
+
+    private void OnDisable()
+    {
+        //Lava.OnLavaEngulfs -= ResetGrid;
+        //PlayerMovement.OnPlayerVictory -= ResetGrid;
+    }
 }

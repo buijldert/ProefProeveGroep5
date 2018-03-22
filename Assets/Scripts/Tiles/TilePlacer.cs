@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Environment;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,12 @@ namespace Tiles {
         private bool _canSpawnTile;
 
         private int _numberOfTilesPlaced;
+
+        private void OnEnable()
+        {
+            //Lava.OnLavaEngulfs += RemoveTiles;
+            //PlayerMovement.OnPlayerVictory += RemoveTiles;
+        }
 
         public void PickTile(GameObject tileToPick)
         {
@@ -47,21 +54,24 @@ namespace Tiles {
         {
 			_currentNode = _grid.GetNodeFromWorldPos (_grid.FindNearestPosition (Camera.main.ScreenToWorldPoint (inputPos)));
 
-			_currentNode.SetTileType (_currentTile.GetComponent<Tile> ().GetTileType ());
+            if(_currentNode.GetTileType() == TileType.None)
+            {
+                _currentNode.SetTileType(_currentTile.GetComponent<Tile>().GetTileType());
 
-			_finding.CalculatePath (_currentNode, PlaceTileCallback);
+                _finding.CalculatePath(_currentNode, PlaceTileCallback);
 
-            _numberOfTilesPlaced++;
-            if (_numberOfTilesPlaced == 2)
-                if(OnLavaStart != null)
-                    OnLavaStart();
-
+                _numberOfTilesPlaced++;
+                if (_numberOfTilesPlaced == 2)
+                    if (OnLavaStart != null)
+                        OnLavaStart();
+            }
         }
 
 		public void PlaceTileCallback() {
 			GameObject tileClone = Instantiate(_currentTile);
 
 			tileClone.transform.position = _currentNode.GetWorldPos ();
+            tileClone.transform.SetParent(transform);
 		}
 
         public void ClickedButtonCheck()
@@ -74,6 +84,20 @@ namespace Tiles {
         {
             yield return new WaitForEndOfFrame();
             _canSpawnTile = true;
+        }
+
+        private void RemoveTiles()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(0).gameObject);
+            }
+        }
+
+        private void OnDisable()
+        {
+            //Lava.OnLavaEngulfs -= RemoveTiles;
+            //PlayerMovement.OnPlayerVictory -= RemoveTiles;
         }
     }
 }

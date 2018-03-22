@@ -33,7 +33,7 @@ MonoBehaviour:
   DefeatBackground: {fileID: 21300000, guid: 7a4e2d4ddf49de241b98dded8ca06c4e, type: 3}
   Horizontal: {fileID: 21300000, guid: 43850a269d085ae42bc421fbe7ff84af, type: 3}
   Vertical: {fileID: 21300000, guid: 347249a079f00044897eb516e562dcf8, type: 3}
-  CornerRightUp: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
-  CornerLeftUp: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  CornerRightUp: {fileID: 21300000, guid: da555c37f9ab1fe4b994c5fcd6f55580, type: 3}
+  CornerLeftUp: {fileID: 21300000, guid: b117963eeb906f345b9002b17c64a85b, type: 3}
   CornerLeft: {fileID: 21300000, guid: 814cb598994300546bdcc55ea3b766e0, type: 3}
   CornerRight: {fileID: 21300000, guid: 3c2c5b5fab224954290a9e3087a0da30, type: 3}
