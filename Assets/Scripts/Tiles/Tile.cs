@@ -12,7 +12,6 @@ namespace Tiles
         BottomLeft,
         TopRight,
         BottomRight,
-        Blocked,
         None
     }
 

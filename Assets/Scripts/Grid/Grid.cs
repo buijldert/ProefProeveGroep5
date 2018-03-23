@@ -35,7 +35,19 @@ public class Grid : MonoBehaviour {
 				Vector2 gridPos = new Vector2 (x, y);
 				Vector2 worldPos = GridToWorldPos (new Vector2(gridPos.x * _nodeDiameter, gridPos.y * _nodeDiameter));
 
-				Node node = new Node (gridPos, worldPos, true);
+                RaycastHit hit = new RaycastHit();
+                bool walkable = true;
+
+                Debug.DrawRay(new Vector3(worldPos.x, worldPos.y, 0), new Vector3(0, 0, 1), Color.black, int.MaxValue);
+
+                if (Physics.Raycast(new Vector3(worldPos.x, worldPos.y , -1), new Vector3(0, 0, 1),out hit, 3f)) {
+                    if (hit.collider != null) {
+                        walkable = false;
+                    }
+                }
+
+				Node node = new Node (gridPos, worldPos, walkable);
+
 
 				_grid [x, y] = node;
 			}
@@ -130,7 +142,7 @@ public class Grid : MonoBehaviour {
 					} else {
 						Gizmos.color = Color.red;
 					}
-					Gizmos.DrawWireCube (_grid [x, y].GetWorldPos (), new Vector2(_nodeDiameter, _nodeDiameter));
+					Gizmos.DrawWireCube (_grid [x, y].GetWorldPos (), new Vector3(_nodeDiameter, _nodeDiameter, 1));
 				}
 			}
 		}
