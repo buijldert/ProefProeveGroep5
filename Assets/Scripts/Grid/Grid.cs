@@ -38,7 +38,7 @@ public class Grid : MonoBehaviour {
                 RaycastHit hit = new RaycastHit();
                 bool walkable = true;
 
-                Debug.DrawRay(new Vector3(worldPos.x, worldPos.y, 0), new Vector3(0, 0, 1), Color.black, int.MaxValue);
+                //Debug.DrawRay(new Vector3(worldPos.x, worldPos.y, 0), new Vector3(0, 0, 1), Color.black, int.MaxValue);
 
                 if (Physics.Raycast(new Vector3(worldPos.x, worldPos.y , -1), new Vector3(0, 0, 1),out hit, 3f)) {
                     if (hit.collider != null) {
