@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnEnable()
     {
-        //Lava.OnLavaEngulfs -= ResetPlayer;
-        //PlayerMovement.OnPlayerVictory -= ResetPlayer;
+        Lava.OnLavaEngulfs += ResetPlayerPosition;
+        OnPlayerVictory += ResetPlayerPosition;
     }
 
     private void Start()
@@ -49,14 +49,16 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void ResetPlayer()
+    private void ResetPlayerPosition()
     {
         transform.position = _startPos;
+        _isVictorious = false;
+        _pathIndex = 0;
     }
 
     private void OnDisable()
     {
-        //Lava.OnLavaEngulfs -= ResetPlayer;
-        //PlayerMovement.OnPlayerVictory -= ResetPlayer;
+        Lava.OnLavaEngulfs -= ResetPlayerPosition;
+        OnPlayerVictory -= ResetPlayerPosition;
     }
 }

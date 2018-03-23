@@ -25,8 +25,8 @@ namespace Tiles {
 
         private void OnEnable()
         {
-            //Lava.OnLavaEngulfs += RemoveTiles;
-            //PlayerMovement.OnPlayerVictory += RemoveTiles;
+            Lava.OnLavaEngulfs += RemoveTiles;
+            PlayerMovement.OnPlayerVictory += RemoveTiles;
         }
 
         public void PickTile(GameObject tileToPick)
@@ -90,14 +90,16 @@ namespace Tiles {
         {
             for (int i = 0; i < transform.childCount; i++)
             {
-                Destroy(transform.GetChild(0).gameObject);
+                Destroy(transform.GetChild(i).gameObject);
             }
+            _canSpawnTile = false;
+            _numberOfTilesPlaced = 0;
         }
 
         private void OnDisable()
         {
-            //Lava.OnLavaEngulfs -= RemoveTiles;
-            //PlayerMovement.OnPlayerVictory -= RemoveTiles;
+            Lava.OnLavaEngulfs -= RemoveTiles;
+            PlayerMovement.OnPlayerVictory -= RemoveTiles;
         }
     }
 }

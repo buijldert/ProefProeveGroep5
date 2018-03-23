@@ -15,14 +15,18 @@ namespace Environment {
         [SerializeField]private Camera _mainCamera;
         [SerializeField]private Transform _player;
 
+        private Vector2 _startPos;
+
         private void OnEnable()
         {
             TilePlacer.OnLavaStart += StartMoving;
+            OnLavaEngulfs += ResetLavaPosition;
+            PlayerMovement.OnPlayerVictory += ResetLavaPosition;
         }
 
-        private void OnDisable()
+        private void Start()
         {
-            TilePlacer.OnLavaStart -= StartMoving;
+            _startPos = transform.position;
         }
 
         private void StartMoving()
@@ -48,6 +52,18 @@ namespace Environment {
                 }
                 yield return new WaitForEndOfFrame();
             }
-        }   
+        }
+
+        private void ResetLavaPosition()
+        {
+            transform.position = _startPos;
+        }
+
+        private void OnDisable()
+        {
+            TilePlacer.OnLavaStart -= StartMoving;
+            OnLavaEngulfs -= ResetLavaPosition;
+            PlayerMovement.OnPlayerVictory -= ResetLavaPosition;
+        }
     }
 }

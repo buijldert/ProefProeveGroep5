@@ -25,8 +25,8 @@ public class Grid : MonoBehaviour {
 
     private void OnEnable()
     {
-        //Lava.OnLavaEngulfs += ResetGrid;
-        //PlayerMovement.OnPlayerVictory += ResetGrid;
+        Lava.OnLavaEngulfs += ResetGrid;
+        PlayerMovement.OnPlayerVictory += ResetGrid;
     }
 
     private void CreateGrid() {
@@ -150,7 +150,7 @@ public class Grid : MonoBehaviour {
 
     private void OnDisable()
     {
-        //Lava.OnLavaEngulfs -= ResetGrid;
-        //PlayerMovement.OnPlayerVictory -= ResetGrid;
+        Lava.OnLavaEngulfs -= ResetGrid;
+        PlayerMovement.OnPlayerVictory -= ResetGrid;
     }
 }

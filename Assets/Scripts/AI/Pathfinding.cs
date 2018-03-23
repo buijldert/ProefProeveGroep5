@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Environment;
+using System.Collections;
 using System.Collections.Generic;
 using Tiles;
 using UnityEngine;
@@ -13,65 +14,74 @@ public class Pathfinding : MonoBehaviour {
 		return _path;
 	}
 
-	private void Start() {
+    private void OnEnable()
+    {
+        Lava.OnLavaEngulfs += ClearPath;
+        PlayerMovement.OnPlayerVictory += ClearPath;
+    }
 
-		_path = new List<Node> ();
+    private void Start() {
+        AddAvailableTilesForNode();
+    }
 
-		List<TileType> topNeighbour = new List<TileType> (){TileType.Vertical, TileType.BottomLeft, TileType.BottomRight };
-		List<TileType> leftNeighbour = new List<TileType> (){ TileType.BottomRight, TileType.Horizontal, TileType.TopRight };
-		List<TileType> rightNeighbour = new List<TileType> (){ TileType.BottomLeft, TileType.Horizontal, TileType.TopLeft };
-		List<TileType> bottomNeighbour = new List<TileType> (){ TileType.Vertical, TileType.TopLeft, TileType.TopRight };
+    private void AddAvailableTilesForNode()
+    {
+        _path = new List<Node>();
 
-		//Bottom left tile
-		Dictionary<Vector2, List<TileType>> bottomLeftDic = new Dictionary<Vector2, List<TileType>> ();
+        List<TileType> topNeighbour = new List<TileType>() { TileType.Vertical, TileType.BottomLeft, TileType.BottomRight };
+        List<TileType> leftNeighbour = new List<TileType>() { TileType.BottomRight, TileType.Horizontal, TileType.TopRight };
+        List<TileType> rightNeighbour = new List<TileType>() { TileType.BottomLeft, TileType.Horizontal, TileType.TopLeft };
+        List<TileType> bottomNeighbour = new List<TileType>() { TileType.Vertical, TileType.TopLeft, TileType.TopRight };
 
-		bottomLeftDic.Add (new Vector2 (0, -1), bottomNeighbour);
-		bottomLeftDic.Add (new Vector2 (-1, 0), leftNeighbour);
+        //Bottom left tile
+        Dictionary<Vector2, List<TileType>> bottomLeftDic = new Dictionary<Vector2, List<TileType>>();
 
-		_avalibleTilesForNode.Add (TileType.BottomLeft, bottomLeftDic);
+        bottomLeftDic.Add(new Vector2(0, -1), bottomNeighbour);
+        bottomLeftDic.Add(new Vector2(-1, 0), leftNeighbour);
+
+        _avalibleTilesForNode.Add(TileType.BottomLeft, bottomLeftDic);
 
 
-		//Bottom right tile
-		Dictionary<Vector2, List<TileType>> bottomRightDic = new Dictionary<Vector2, List<TileType>> ();
+        //Bottom right tile
+        Dictionary<Vector2, List<TileType>> bottomRightDic = new Dictionary<Vector2, List<TileType>>();
 
-		bottomRightDic.Add (new Vector2 (0, -1), bottomNeighbour);
-		bottomRightDic.Add (new Vector2 (1, 0), rightNeighbour);
+        bottomRightDic.Add(new Vector2(0, -1), bottomNeighbour);
+        bottomRightDic.Add(new Vector2(1, 0), rightNeighbour);
 
-		_avalibleTilesForNode.Add (TileType.BottomRight, bottomRightDic);
+        _avalibleTilesForNode.Add(TileType.BottomRight, bottomRightDic);
 
-		//Top left tile
-		Dictionary<Vector2, List<TileType>> topLeftDic = new Dictionary<Vector2, List<TileType>> ();
+        //Top left tile
+        Dictionary<Vector2, List<TileType>> topLeftDic = new Dictionary<Vector2, List<TileType>>();
 
-		topLeftDic.Add (new Vector2 (0, 1), topNeighbour);
-		topLeftDic.Add (new Vector2 (-1, 0), leftNeighbour);
+        topLeftDic.Add(new Vector2(0, 1), topNeighbour);
+        topLeftDic.Add(new Vector2(-1, 0), leftNeighbour);
 
-		_avalibleTilesForNode.Add (TileType.TopLeft, topLeftDic);
+        _avalibleTilesForNode.Add(TileType.TopLeft, topLeftDic);
 
-		//Top right tile
-		Dictionary<Vector2, List<TileType>> topRightDic = new Dictionary<Vector2, List<TileType>> ();
+        //Top right tile
+        Dictionary<Vector2, List<TileType>> topRightDic = new Dictionary<Vector2, List<TileType>>();
 
-		topRightDic.Add (new Vector2 (0, 1), topNeighbour);
-		topRightDic.Add (new Vector2 (1, 0), rightNeighbour);
+        topRightDic.Add(new Vector2(0, 1), topNeighbour);
+        topRightDic.Add(new Vector2(1, 0), rightNeighbour);
 
-		_avalibleTilesForNode.Add (TileType.TopRight, topRightDic);
+        _avalibleTilesForNode.Add(TileType.TopRight, topRightDic);
 
-		//Horizontal tile
-		Dictionary<Vector2, List<TileType>> horizontalDic = new Dictionary<Vector2, List<TileType>> ();
+        //Horizontal tile
+        Dictionary<Vector2, List<TileType>> horizontalDic = new Dictionary<Vector2, List<TileType>>();
 
-		horizontalDic.Add (new Vector2 (-1, 0), leftNeighbour);
-		horizontalDic.Add (new Vector2 (1, 0), rightNeighbour);
+        horizontalDic.Add(new Vector2(-1, 0), leftNeighbour);
+        horizontalDic.Add(new Vector2(1, 0), rightNeighbour);
 
-		_avalibleTilesForNode.Add (TileType.Horizontal, horizontalDic);
+        _avalibleTilesForNode.Add(TileType.Horizontal, horizontalDic);
 
-		//Vertical tile
-		Dictionary<Vector2, List<TileType>> verticalDic = new Dictionary<Vector2, List<TileType>> ();
+        //Vertical tile
+        Dictionary<Vector2, List<TileType>> verticalDic = new Dictionary<Vector2, List<TileType>>();
 
-		verticalDic.Add (new Vector2 (0, 1), topNeighbour);
-		verticalDic.Add (new Vector2 (0, -1), bottomNeighbour);
+        verticalDic.Add(new Vector2(0, 1), topNeighbour);
+        verticalDic.Add(new Vector2(0, -1), bottomNeighbour);
 
-		_avalibleTilesForNode.Add (TileType.Vertical, verticalDic);
-
-	}
+        _avalibleTilesForNode.Add(TileType.Vertical, verticalDic);
+    }
 
 
 	public void CalculatePath(Node nextNode, System.Action callback) {
@@ -100,5 +110,16 @@ public class Pathfinding : MonoBehaviour {
 			callback();
 		}
 	}
+
+    private void ClearPath()
+    {
+        _path.Clear();
+    }
+
+    private void OnDisable()
+    {
+        Lava.OnLavaEngulfs -= ClearPath;
+        PlayerMovement.OnPlayerVictory -= ClearPath;
+    }
 
 }
