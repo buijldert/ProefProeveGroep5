@@ -14,9 +14,9 @@ public class UITile : MonoBehaviour
     }
 
     /// <summary>
-    /// DEMO FIX HET
+    /// Sets the theme for the tile.
     /// </summary>
-    /// <param name="UITheme">UIT heme.</param>
+    /// <param name="UITheme">UITheme.</param>
     private void OnThemeChanged(UITheme UITheme)
     {
         Sprite temp = null;

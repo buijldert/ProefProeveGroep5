@@ -11,6 +11,11 @@ public class MenuAnimation : MonoBehaviour {
 
     private void OnEnable()
     {
+        AnimateMenuButtons();
+    }
+
+    private void AnimateMenuButtons()
+    {
         for (int i = 0; i < _animatedObjects.Length; i++)
         {
             Sequence sequence = DOTween.Sequence();

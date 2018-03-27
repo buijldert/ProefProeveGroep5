@@ -29,6 +29,9 @@ namespace Environment {
             _startPos = transform.position;
         }
 
+        /// <summary>
+        /// Starts the lava moving up.
+        /// </summary>
         private void StartMoving()
         {
             StartCoroutine(Move());
@@ -54,6 +57,9 @@ namespace Environment {
             }
         }
 
+        /// <summary>
+        /// Resets the lava position for the game restart.
+        /// </summary>
         private void ResetLavaPosition()
         {
             transform.position = _startPos;

@@ -4,6 +4,9 @@ using System.Diagnostics;
 
 namespace Tiles
 {
+    /// <summary>
+    /// An enum for use when setting the tiletypes.
+    /// </summary>
     public enum TileType
     {
         Horizontal,
@@ -25,11 +28,19 @@ namespace Tiles
             UIController.instance.UpdateTheme();
         }
 
+        /// <summary>
+        /// Returns the tiletype of this tile.
+        /// </summary>
+        /// <returns>The tile type.</returns>
         public TileType GetTileType()
         {
             return _tileType;
         }
 
+        /// <summary>
+        /// Changes the tile theme.
+        /// </summary>
+        /// <param name="UITheme"></param>
         private void OnThemeChanged(UITheme UITheme)
         {
             Sprite temp = null;

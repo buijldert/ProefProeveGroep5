@@ -19,8 +19,6 @@ public class Grid : MonoBehaviour {
 		_nodeRadius = _nodeDiameter / 2f;
 
 		CreateGrid ();
-
-		//Debug.Log (GetNeighbours(_grid[0,0]));
 	}
 
     private void OnEnable()
@@ -30,6 +28,7 @@ public class Grid : MonoBehaviour {
     }
 
     private void CreateGrid() {
+
 		for (int x = 0; x < _gridWidth; x++) {
 			for (int y = 0; y < _gridHeight; y++) {
 				Vector2 gridPos = new Vector2 (x, y);
@@ -37,8 +36,6 @@ public class Grid : MonoBehaviour {
 
                 RaycastHit hit = new RaycastHit();
                 bool walkable = true;
-
-                //Debug.DrawRay(new Vector3(worldPos.x, worldPos.y, 0), new Vector3(0, 0, 1), Color.black, int.MaxValue);
 
                 if (Physics.Raycast(new Vector3(worldPos.x, worldPos.y , -1), new Vector3(0, 0, 1),out hit, 3f)) {
                     if (hit.collider != null) {
