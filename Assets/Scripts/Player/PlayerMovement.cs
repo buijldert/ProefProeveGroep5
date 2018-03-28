@@ -2,76 +2,82 @@
 using UnityEngine;
 using UI.Controllers;
 using Environment;
+using PathFinding;
 
-public class PlayerMovement : MonoBehaviour {
-    public static Action OnPlayerVictory;
-
-    [SerializeField] private Pathfinding _pathfinding;
-
-    private int _pathIndex;
-
-    private float _movementSpeed = 1.5f;
-    private float _endPointY = 3.6f;
-
-    private bool _isVictorious;
-    
-    private Vector2 _startPos;
-
-    private void OnEnable()
+namespace Player
+{
+    public class PlayerMovement : MonoBehaviour
     {
-        Lava.OnLavaEngulfs += ResetPlayerPosition;
-        OnPlayerVictory += ResetPlayerPosition;
-    }
+        public static Action OnPlayerVictory;
 
-    private void Start()
-    {
-        _startPos = transform.position;
-    }
+        [SerializeField] private Pathfinding _pathfinding;
 
-    private void Update()
-    {
-        if(_pathfinding.GetPath().Count > 0) {
-            Move();
-        }
-    }
+        private int _pathIndex;
 
-    /// <summary>
-    /// Moves the player along the created path.
-    /// </summary>
-    private void Move()
-    {
-        if (_pathIndex < _pathfinding.GetPath().Count)
+        private float _movementSpeed = 1.5f;
+        private float _endPointY = 3.6f;
+
+        private bool _isVictorious;
+
+        private Vector2 _startPos;
+
+        private void OnEnable()
         {
-            transform.position = Vector2.MoveTowards(transform.position, _pathfinding.GetPath()[_pathIndex].GetWorldPos(), _movementSpeed * Time.deltaTime);
-            if ((Vector2)transform.position == _pathfinding.GetPath()[_pathIndex].GetWorldPos())
-            {
-                _pathIndex++;
-            }
+            Lava.OnLavaEngulfs += ResetPlayerPosition;
+            OnPlayerVictory += ResetPlayerPosition;
+        }
 
-            if (transform.position.y > _endPointY && !_isVictorious)
-            {
-                _isVictorious = true;
-                if (OnPlayerVictory != null)
-                    OnPlayerVictory();
+        private void Start()
+        {
+            _startPos = transform.position;
+        }
 
-                UIController.instance.GoToVictoryScreen();
+        private void Update()
+        {
+            if (_pathfinding.GetPath().Count > 0)
+            {
+                Move();
             }
         }
-    }
 
-    /// <summary>
-    /// Resets the player for the game restart.
-    /// </summary>
-    private void ResetPlayerPosition()
-    {
-        transform.position = _startPos;
-        _isVictorious = false;
-        _pathIndex = 0;
-    }
+        /// <summary>
+        /// Moves the player along the created path.
+        /// </summary>
+        private void Move()
+        {
+            if (_pathIndex < _pathfinding.GetPath().Count)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, _pathfinding.GetPath()[_pathIndex].GetWorldPos(), _movementSpeed * Time.deltaTime);
+                if ((Vector2)transform.position == _pathfinding.GetPath()[_pathIndex].GetWorldPos())
+                {
+                    _pathIndex++;
+                }
 
-    private void OnDisable()
-    {
-        Lava.OnLavaEngulfs -= ResetPlayerPosition;
-        OnPlayerVictory -= ResetPlayerPosition;
+                if (transform.position.y > _endPointY && !_isVictorious)
+                {
+                    _isVictorious = true;
+                    if (OnPlayerVictory != null)
+                        OnPlayerVictory();
+
+                    UIController.instance.GoToVictoryScreen();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Resets the player for the game restart.
+        /// </summary>
+        private void ResetPlayerPosition()
+        {
+            transform.position = _startPos;
+            _isVictorious = false;
+            _pathIndex = 0;
+        }
+
+        private void OnDisable()
+        {
+            Lava.OnLavaEngulfs -= ResetPlayerPosition;
+            OnPlayerVictory -= ResetPlayerPosition;
+        }
     }
 }

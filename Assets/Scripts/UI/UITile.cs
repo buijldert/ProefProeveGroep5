@@ -1,54 +1,57 @@
 ﻿using Tiles;
 using UI.Controllers;
+using UI.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class UITile : MonoBehaviour 
+namespace UI
 {
-    [SerializeField] private TileType _tileType;
-
-    private void OnEnable()
+    public class UITile : MonoBehaviour
     {
-        UIController.OnThemeChanged += OnThemeChanged;
-        UIController.instance.UpdateTheme();
-    }
+        [SerializeField] private TileType _tileType;
 
-    /// <summary>
-    /// Sets the theme for the tile.
-    /// </summary>
-    /// <param name="UITheme">UITheme.</param>
-    private void OnThemeChanged(UITheme UITheme)
-    {
-        Sprite temp = null;
-
-        switch (_tileType)
+        private void OnEnable()
         {
-            case TileType.Horizontal:
-                temp = UITheme.Horizontal;
-                break;
-            case TileType.Vertical:
-                temp = UITheme.Vertical;
-                break;
-            case TileType.TopLeft:
-                temp = UITheme.CornerRightUp;
-                break;
-            case TileType.BottomLeft:
-                temp = UITheme.CornerLeft;
-                break;
-            case TileType.TopRight:
-                temp = UITheme.CornerLeftUp;
-                break;
-            case TileType.BottomRight:
-                temp = UITheme.CornerRight;
-                break;
-
+            UIController.OnThemeChanged += OnThemeChanged;
+            UIController.instance.UpdateTheme();
         }
 
-        GetComponent<Image>().sprite = temp;
-    }
-	
-    private void OnDisable()
-    {
-        UIController.OnThemeChanged -= OnThemeChanged;
+        /// <summary>
+        /// Sets the theme for the tile.
+        /// </summary>
+        /// <param name="UITheme">UITheme.</param>
+        private void OnThemeChanged(UITheme UITheme)
+        {
+            Sprite temp = null;
+
+            switch (_tileType)
+            {
+                case TileType.Horizontal:
+                    temp = UITheme.Horizontal;
+                    break;
+                case TileType.Vertical:
+                    temp = UITheme.Vertical;
+                    break;
+                case TileType.TopLeft:
+                    temp = UITheme.CornerRightUp;
+                    break;
+                case TileType.BottomLeft:
+                    temp = UITheme.CornerLeft;
+                    break;
+                case TileType.TopRight:
+                    temp = UITheme.CornerLeftUp;
+                    break;
+                case TileType.BottomRight:
+                    temp = UITheme.CornerRight;
+                    break;
+
+            }
+
+            GetComponent<Image>().sprite = temp;
+        }
+
+        private void OnDisable()
+        {
+            UIController.OnThemeChanged -= OnThemeChanged;
+        }
     }
 }

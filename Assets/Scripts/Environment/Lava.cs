@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using Tiles;
 using UnityEngine;
-using UnityEngine.UI;
 using UI.Controllers;
+using Player;
 
 namespace Environment {
     public class Lava : MonoBehaviour {
@@ -17,28 +16,24 @@ namespace Environment {
 
         private Vector2 _startPos;
 
-        private void OnEnable()
-        {
+        private void OnEnable(){
             TilePlacer.OnLavaStart += StartMoving;
             OnLavaEngulfs += ResetLavaPosition;
             PlayerMovement.OnPlayerVictory += ResetLavaPosition;
         }
 
-        private void Start()
-        {
+        private void Start(){
             _startPos = transform.position;
         }
 
         /// <summary>
-        /// Starts the lava moving up.
+        /// Gets the lava moving.
         /// </summary>
-        private void StartMoving()
-        {
+        private void StartMoving(){
             StartCoroutine(Move());
         }
 
-        private IEnumerator Move()
-        {
+        private IEnumerator Move(){
             Vector3 stageDimensions = new Vector3(Screen.width, Screen.height, 0);
 
             while (transform.position.y < stageDimensions.y)
@@ -60,13 +55,11 @@ namespace Environment {
         /// <summary>
         /// Resets the lava position for the game restart.
         /// </summary>
-        private void ResetLavaPosition()
-        {
+        private void ResetLavaPosition(){
             transform.position = _startPos;
         }
 
-        private void OnDisable()
-        {
+        private void OnDisable(){
             TilePlacer.OnLavaStart -= StartMoving;
             OnLavaEngulfs -= ResetLavaPosition;
             PlayerMovement.OnPlayerVictory -= ResetLavaPosition;

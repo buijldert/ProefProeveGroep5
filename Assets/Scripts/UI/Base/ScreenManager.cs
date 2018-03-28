@@ -1,4 +1,5 @@
 ﻿using UI.Controllers;
+using UI.ScriptableObjects;
 using UnityEngine;
 
 namespace UI.Base

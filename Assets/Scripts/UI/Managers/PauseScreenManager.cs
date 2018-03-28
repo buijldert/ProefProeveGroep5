@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UI.Controllers;
+using UI.ScriptableObjects;
 
 namespace UI.Managers
 {

@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using UI.Controllers;
-using System.Diagnostics;
+using UI.ScriptableObjects;
 
-namespace Tiles
-{
+namespace Tiles {
     /// <summary>
     /// An enum for use when setting the tiletypes.
     /// </summary>
-    public enum TileType
-    {
+    public enum TileType {
         Horizontal,
         Vertical,
         TopLeft,
@@ -18,12 +16,10 @@ namespace Tiles
         None
     }
 
-    public class Tile : MonoBehaviour
-    {
+    public class Tile : MonoBehaviour {
         [SerializeField] private TileType _tileType;
 
-        private void OnEnable()
-        {
+        private void OnEnable() {
             UIController.OnThemeChanged += OnThemeChanged;
             UIController.instance.UpdateTheme();
         }
@@ -32,8 +28,7 @@ namespace Tiles
         /// Returns the tiletype of this tile.
         /// </summary>
         /// <returns>The tile type.</returns>
-        public TileType GetTileType()
-        {
+        public TileType GetTileType() {
             return _tileType;
         }
 
@@ -41,12 +36,10 @@ namespace Tiles
         /// Changes the tile theme.
         /// </summary>
         /// <param name="UITheme"></param>
-        private void OnThemeChanged(UITheme UITheme)
-        {
+        private void OnThemeChanged(UITheme UITheme) {
             Sprite temp = null;
 
-            switch (_tileType)
-            {
+            switch (_tileType) {
                 case TileType.Horizontal:
                     temp = UITheme.Horizontal;
                     break;
@@ -71,8 +64,7 @@ namespace Tiles
             GetComponent<SpriteRenderer>().sprite = temp;
         }
 
-        private void OnDisable()
-        {
+        private void OnDisable() {
             UIController.OnThemeChanged -= OnThemeChanged;
         }
     }

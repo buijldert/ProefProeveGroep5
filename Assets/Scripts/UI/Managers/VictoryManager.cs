@@ -1,5 +1,6 @@
 ﻿using UI.Base;
 using UI.Controllers;
+using UI.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
