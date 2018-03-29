@@ -1,5 +1,7 @@
 # ProefProeveGroep5
 
+Our game is called surface, it is a puzzle game based. The core mechanic to build a path is based upon a board game called 'saboteur'. 
+
 ## Code Highlights
 
 ### Grid
