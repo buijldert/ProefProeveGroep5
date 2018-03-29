@@ -47,13 +47,13 @@ namespace Tiles {
                     temp = UITheme.Vertical;
                     break;
                 case TileType.TopLeft:
-                    temp = UITheme.CornerRightUp;
+                    temp = UITheme.CornerLeftUp;
                     break;
                 case TileType.BottomLeft:
                     temp = UITheme.CornerLeft;
                     break;
                 case TileType.TopRight:
-                    temp = UITheme.CornerLeftUp;
+                    temp = UITheme.CornerRightUp;
                     break;
                 case TileType.BottomRight:
                     temp = UITheme.CornerRight;

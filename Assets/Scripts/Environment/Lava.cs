@@ -41,10 +41,10 @@ namespace Environment {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(0, stageDimensions.y), _lavaSpeed * Time.deltaTime);
                 if (transform.position.y > _player.position.y)
                 {
-                    UIController.instance.GoToDefeatScreen();
-
                     if (OnLavaEngulfs != null)
                         OnLavaEngulfs();
+
+                    UIController.instance.GoToDefeatScreen();
 
                     StopAllCoroutines();
                 }
@@ -59,7 +59,7 @@ namespace Environment {
             transform.position = _startPos;
         }
 
-        private void OnDisable(){
+        private void OnDisable() {
             TilePlacer.OnLavaStart -= StartMoving;
             OnLavaEngulfs -= ResetLavaPosition;
             PlayerMovement.OnPlayerVictory -= ResetLavaPosition;

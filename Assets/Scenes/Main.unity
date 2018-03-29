@@ -435,7 +435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _grid: {fileID: 1206566763}
   _finding: {fileID: 1206566762}
-  _currentTile: {fileID: 0}
 --- !u!4 &359317616
 Transform:
   m_ObjectHideFlags: 0
@@ -877,7 +876,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 27.5}
-  m_SizeDelta: {x: -20, y: -425}
+  m_SizeDelta: {x: 0, y: -425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526056651
 MonoBehaviour:
@@ -3518,22 +3517,12 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114220841202983170, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114867563218972366, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114220841202983170, guid: 9b0d4fed65f7645429c6132323c33d27,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 359317615}
-    - target: {fileID: 114379041604734878, guid: 9b0d4fed65f7645429c6132323c33d27,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 359317615}
-    - target: {fileID: 114379041604734878, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114867563218972366, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3548,22 +3537,32 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114867563218972366, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114757652420290280, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114867563218972366, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114757652420290280, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114757652420290280, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114379041604734878, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 359317615}
-    - target: {fileID: 114757652420290280, guid: 9b0d4fed65f7645429c6132323c33d27,
+    - target: {fileID: 114379041604734878, guid: 9b0d4fed65f7645429c6132323c33d27,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 359317615}
+    - target: {fileID: 114220841202983170, guid: 9b0d4fed65f7645429c6132323c33d27,
+        type: 2}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 359317615}
+    - target: {fileID: 114220841202983170, guid: 9b0d4fed65f7645429c6132323c33d27,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -3588,7 +3587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427662634
 RectTransform:
   m_ObjectHideFlags: 0
