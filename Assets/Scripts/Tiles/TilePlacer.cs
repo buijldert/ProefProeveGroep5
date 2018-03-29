@@ -66,6 +66,7 @@ namespace Tiles {
 
                 if (_numberOfTilesPlaced == 0 && (_currentNode.GetGridPos().y > 0 || _currentNode.GetGridPos().x != 1))
                     return;
+
                 _currentNode.SetTileType(_currentTile.GetComponent<Tile>().GetTileType());
 
                 _finding.CalculatePath(_currentNode, PlaceTileCallback);
